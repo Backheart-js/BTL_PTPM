@@ -23,7 +23,7 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">   
                         </ul>
                         <form class="d-flex">
-                            <button class="btn btn-outline-success" type="submit">Đăng nhập</button>
+                            <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
                         </form>
                     </div>
                 </div>

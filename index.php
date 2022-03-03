@@ -64,7 +64,7 @@ require "./partials-front/header.php";
             </div>
         </div>
         <div class="row mt-2">
-            <div class="col-md-3 ms-auto me-auto mb-2">
+            <div class="col-md-4 ms-auto me-auto mb-2">
                 <a href="#" class="text-decoration-none">
                     <div class="d-grid gap-2">
                         <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
@@ -73,7 +73,7 @@ require "./partials-front/header.php";
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 ms-auto me-auto mb-2">
+            <div class="col-md-4 ms-auto me-auto mb-2">
                 <a href="#" class="text-decoration-none">
                     <div class="d-grid gap-2">
                         <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
@@ -82,7 +82,19 @@ require "./partials-front/header.php";
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 ms-auto me-auto mb-2">
+            <div class="col-md-4 ms-auto me-auto mb-2">
+                <a href="#" class="text-decoration-none">
+                    <div class="d-grid gap-2">
+                        <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
+                            <h5 class="fw-bold text-secondary">Gửi Câu Hỏi</h5>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            
+            <div class="col-md-6 ms-auto me-auto mb-2">
                 <a href="#" class="text-decoration-none">
                     <div class="d-grid gap-2">
                         <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
@@ -91,22 +103,11 @@ require "./partials-front/header.php";
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 ms-auto me-auto mb-2">
+            <div class="col-md-6 ms-auto me-auto mb-2">
                 <a href="#" class="text-decoration-none">
                     <div class="d-grid gap-2">
                         <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
                             <h5 class="fw-bold text-secondary">Tải Xuống Bản Đăng Ký</h5>
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-md-8 ms-auto me-auto mb-2">
-                <a href="#" class="text-decoration-none">
-                    <div class="d-grid gap-2">
-                        <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
-                            <h5 class="fw-bold text-secondary">Gửi Câu Hỏi</h5>
                         </span>
                     </div>
                 </a>
