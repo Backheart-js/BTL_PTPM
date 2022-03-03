@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +26,18 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
                         <form class="d-flex">
-                            <button class="btn btn-outline-success" type="submit">Đăng nhập</button>
+                            <?php
+                            if(!isset($_SESSION['LoginOK'])){
+                            ?>
+                            <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
+                            <?php
+                            }else{
+                            ?>
+                            <a href="manage/index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
+                            <a href="logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
+                            <?php
+                            }
+                            ?>
                         </form>
                     </div>
                 </div>

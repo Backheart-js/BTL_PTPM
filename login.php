@@ -1,7 +1,6 @@
 <?php
-session_start();
-if(!isset($_SESSION['LoginOK'])){
 require "./partials-front/header.php";
+if(!isset($_SESSION['LoginOK'])){
 ?>
 <main style="padding: 150px;" id="body-index">
     <div class="col-md-4 ms-auto me-auto bg-white rounded p-3">

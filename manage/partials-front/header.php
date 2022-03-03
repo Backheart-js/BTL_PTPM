@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +12,7 @@ session_start();
 </head>
 
 <body>
-    <header style="background-color: #1C8233;">
+    <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
                 <div class="container-fluid">
@@ -29,12 +27,12 @@ session_start();
                             <?php
                             if(!isset($_SESSION['LoginOK'])){
                             ?>
-                            <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
+                            <a href="../../login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
                             <?php
                             }else{
                             ?>
-                            <a href="manage/index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
-                            <a href="logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
+                            <a href="index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
+                            <a href="../../BTL_QLNK/logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
                             <?php
                             }
                             ?>
