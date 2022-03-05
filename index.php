@@ -51,8 +51,8 @@ require "./partials-front/header.php";
                 <form action="shkinformation.php" method="POST">
                     <div class="d-grid gap-2">
                         <h4 class="text-title">Tra Cứu Thông Tin Sổ Hộ Khẩu</h4>
-                        <input class="form-control me-2" type="search" placeholder="Nhập mã sổ hộ khẩu" aria-label="Search">
-                        <button class="btn btn-primary ms-auto me-auto" type="submit">Tra Cứu</button>
+                        <input class="form-control me-2" type="search" placeholder="Nhập mã sổ hộ khẩu" name="mashk" aria-label="Search">
+                        <button class="btn btn-primary ms-auto me-auto" name="tracuu" type="submit">Tra Cứu</button>
                     </div>
                 </form>
                 <hr style="color: white;">
