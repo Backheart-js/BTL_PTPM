@@ -5,7 +5,7 @@ if (isset($_SESSION['LoginOK'])) {
     $ps = new Process();
     if (isset($_POST['btnSubmitTachSHK'])) {
         $count = 0;
-        $ma_shk = $_POST['mashk'];
+        $ma_shk = $_POST['mashknew'];
         $hotenchuho = $_POST['hotenchuho'];
         $noithuongtru = $_POST['noithuongtru'];
         $ngaycap = $_POST['ngaycap'];
@@ -24,7 +24,7 @@ if (isset($_SESSION['LoginOK'])) {
         $noithuongtrutruocday = $_POST['noithuongtrutruocday'];
         $canbodangky = $_POST['canbodangky'];
         $truongconganb = $_POST['truongconganb'];
-        
+
     }
 }
 ?>

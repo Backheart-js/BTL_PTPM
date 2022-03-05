@@ -17,7 +17,7 @@ if (isset($_SESSION['LoginOK'])) {
             <div class="row g-3">
                 <div class="col-md-12">
                     <label for="validationCustom01" class="form-label">MÃ SỔ HỘ KHẨU</label>
-                    <input type="text" class="form-control" id="mashknew" name="mashk" required>
+                    <input type="text" class="form-control" id="mashknew" name="mashknew" required>
                 </div>
                 <div class="col-md-6">
                     <label for="validationCustom02" class="form-label">HỌ VÀ TÊN CHỦ HỘ</label>
