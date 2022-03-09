@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style/formKhaibao.css">
     <script src="../../BTL_QLNK/js/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -19,7 +20,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">Trang chủ</a>
+                    <a class="navbar-brand" href="../index.php">Trang chủ</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

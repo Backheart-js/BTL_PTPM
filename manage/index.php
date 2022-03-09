@@ -14,12 +14,11 @@ if (isset($_SESSION['LoginOK'])) {
                     <div>
                         <a href="add-shk.php"><button type="button" class="btn btn-primary mt-2">THÊM HỘ KHẨU</button></a>
                         <a href="hopthu.php"><button type="button" class="btn btn-primary mt-2">HỘP THƯ</button></a>
-                        <button type="button" class="btn btn-primary mt-2">CHUYỂN KHẨU</button>
                         <a href="tachkhau.php"><button type="button" class="btn btn-primary mt-2">TÁCH KHẨU</button></a>
                     </div>
                     <div class="col-md-4 mt-2">
                         <form class="flex-row">
-                            <input class="form-control me-2" type="search" id="mashk" placeholder="Tìm kiếm sổ hộ khẩu" aria-label="Search">
+                            <input class="form-control me-2" type="search" id="mashk" placeholder="Tìm kiếm sổ hộ khẩu theo mã sổ hộ khẩu hoặc cccd" aria-label="Search">
                             <button class="btn btn-success mt-1" id="searchSHK" type="button">Tìm kiếm</button>
                         </form>
                     </div>

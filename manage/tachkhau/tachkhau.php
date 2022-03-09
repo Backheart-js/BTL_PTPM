@@ -13,6 +13,9 @@ if (isset($_SESSION['LoginOK'])) {
         </div>
         <div class="container pt-2  ms-3 me-3">
             <h4 class="text-center">TÁCH KHẨU</h4>
+            <?php
+                if(!isset($_GET['cccd'])){
+            ?>
             <div class="row">
                 <div class="col-md-8 ms-auto me-auto bg-white rounded shadow-sm p-2">
                     <h5>Tìm kiếm sổ hộ khẩu chứa người dân muốn tách</h5>
@@ -30,7 +33,21 @@ if (isset($_SESSION['LoginOK'])) {
             <div class="row" id="formthongtin">
 
             </div>
-        </div>
+            <?php
+                }else{
+                    ?>
+                <div class="row">
+                    <div class="col-md-8 ms-auto me-auto bg-white rounded shadow-sm p-2">
+
+                    </div>
+                </div>
+                <div class="row" id="formthongtin">
+                    <?php
+                    include("tmp-tachkhau.php");
+                }
+            ?>
+                </div>
+            </div>
     </main>
 <?php
     include("partials-front/footer.php");

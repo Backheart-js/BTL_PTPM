@@ -20,7 +20,10 @@ if (isset($_SESSION['LoginOK'])) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Document</title>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-                <link rel="stylesheet" href="../../BTL_QLNK/style/style.css">
+                <link rel="stylesheet" href="../style/style.css">
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+                <script src="../../BTL_QLNK/js/jquery-3.6.0.min.js"></script>
             </head>
 
             <body class="bg-light">
@@ -80,12 +83,18 @@ if (isset($_SESSION['LoginOK'])) {
                             </div>
                             <div class="col-md-8 pt-2 ms-auto">
                                 <?php
-                                if(isset($_GET['done'])){
+                                if (isset($_GET['done'])) {
                                     echo "<p style='color:blue'>{$_GET['done']}</p>";
                                 }
                                 ?>
+                                <div class="col-md-2">
+                                    <a href="index.php" class="text-decoration-none btn btn-primary mb-2"><i class="bi bi-arrow-left"></i> Quay Lại</a>
+                                </div>
                                 <button type="button" class="btn btn-primary me-2 mb-2" data-toggle="modal" data-target="#exampleModal">
                                     <a href="themthanhvienshk.php?mashk=<?php echo $mashk ?>" class="text-white text-decoration-none">Thêm thành viên</a><br>
+                                </button>
+                                <button type="button" class="btn btn-primary me-2 mb-2" data-toggle="modal" data-target="#exampleModal">
+                                    <a href="doichuho.php?mashk=<?php echo $mashk ?>" class="text-white text-decoration-none">Đổi chủ hộ</a><br>
                                 </button>
                                 <div id="home" style="color:white" class="bg-danger shadow-sm p-2">
                                     <h5 class="text-center">Công An Thành Phố <?php echo $row['thanhpho'] ?></h5>
@@ -161,7 +170,7 @@ if (isset($_SESSION['LoginOK'])) {
                                     </div>
                                     <div class="d-flex mt-3 mb-3 justify-content-center">
                                         <button type="button" class="btn btn-primary me-2" data-toggle="modal" data-target="#exampleModal">
-                                            <a href="manage/index.php" class="text-white text-decoration-none">Sửa thông tin</a><br>
+                                            <a href="updateTTND.php?cccd=<?php echo $ch['cccd']?>" class="text-white text-decoration-none">Sửa thông tin</a><br>
                                         </button>
                                     </div>
                                 </div>
@@ -216,13 +225,16 @@ if (isset($_SESSION['LoginOK'])) {
                                             </div>
                                             <div class="d-flex mt-3 mb-3 justify-content-center">
                                                 <button type="button" class="btn btn-primary me-2" data-toggle="modal" data-target="#exampleModal">
-                                                    <a href="manage/index.php" class="text-white text-decoration-none">Sửa thông tin</a><br>
+                                                    <a href="updateTTND.php?cccd=<?php echo $ngdan['cccd']?>" class="text-white text-decoration-none">Sửa thông tin</a><br>
                                                 </button>
                                                 <button type="button" class="btn btn-primary me-2" data-toggle="modal" data-target="#exampleModal">
                                                     <a onclick="return confirm('Bạn chắc chắn muốn gỡ người này khỏi hộ khẩu?')" href="process-deleteshk.php?mashk=<?php echo $ngdan['ma_shk'] ?>&cccd=<?php echo $ngdan['cccd'] ?>" class="text-white text-decoration-none">Gỡ người dân</a><br>
                                                 </button>
+                                                <button type="button" class="btn btn-primary me-2" data-toggle="modal" data-target="#exampleModal">
+                                                    <a href="chuyenkhau.php?cccd=<?php echo $ngdan['cccd'] ?>" class="text-white text-decoration-none">Chuyển khẩu</a><br>
+                                                </button>
                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                                    <a href="" class="text-white text-decoration-none">Chuyển khẩu</a><br>
+                                                    <a href="tachkhau.php?mashk=<?php echo $ngdan['ma_shk'] ?>&cccd=<?php echo $ngdan['cccd'] ?>" class="text-white text-decoration-none">Tách khẩu</a><br>
                                                 </button>
                                             </div>
                                         </div>

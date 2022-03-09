@@ -4,8 +4,8 @@ require "./partials-front/header.php";
 <main style="padding-bottom: 100px;" id="body-index">
     <div class="container">
         <div class="pt-3">
-            <h2 class="text-title">Trang Thông Tin Nhân Khẩu Của Xã</h2>
-            <h2 class="text-title">X</h2>
+            <h2 class="heading text-title">Trang Thông Tin Nhân Khẩu Của Xã</h2>
+            <h2 class="heading text-title">Phú Yên</h2>
         </div>
         <div class="row">
             <div class="col-md-4 ms-auto me-auto">
@@ -65,7 +65,7 @@ require "./partials-front/header.php";
         </div>
         <div class="row mt-2">
             <div class="col-md-4 ms-auto me-auto mb-2">
-                <a href="#" class="text-decoration-none">
+                <a href="khaibaoOnline.php?dang=1" class="text-decoration-none">
                     <div class="d-grid gap-2">
                         <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
                             <h5 class="fw-bold text-secondary">Thủ Tục Tạm Trú</h5>
@@ -74,7 +74,7 @@ require "./partials-front/header.php";
                 </a>
             </div>
             <div class="col-md-4 ms-auto me-auto mb-2">
-                <a href="#" class="text-decoration-none">
+                <a href="khaibaoOnline.php?dang=2" class="text-decoration-none">
                     <div class="d-grid gap-2">
                         <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
                             <h5 class="fw-bold text-secondary">Thủ Tục Tạm Vắng</h5>
@@ -95,7 +95,7 @@ require "./partials-front/header.php";
         <div class="row mt-2">
             
             <div class="col-md-6 ms-auto me-auto mb-2">
-                <a href="#" class="text-decoration-none">
+                <a href="ChuyenKhau.php" class="text-decoration-none">
                     <div class="d-grid gap-2">
                         <span style="height: 40px;" class="btn btn-light shadow-sm nav-features" type="button">
                             <h5 class="fw-bold text-secondary">Thủ Tục Chuyển Khẩu</h5>
