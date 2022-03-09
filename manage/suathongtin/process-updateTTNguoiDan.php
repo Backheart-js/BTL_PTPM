@@ -1,7 +1,7 @@
 <?php
-require "../config/config.php";
+require "../../config/config.php";
 if (!isset($_SESSION['LoginOK'])) {
-    header('location: ../index.php');
+    header('location: ../../index.php');
 } else {
     if(isset($_POST['smUpdateshk'])){
         $cccd = $_POST['cccdupdate'];
@@ -43,13 +43,13 @@ if (!isset($_SESSION['LoginOK'])) {
             $rowinfoshk = mysqli_fetch_assoc($result);
             $ma_shk = $rowinfoshk['ma_shk'];
             $done = "Sửa thành công!";
-            header("location: shkmanage.php?mashk=$ma_shk&done=$done");
+            header("location: ../shkmanage.php?mashk=$ma_shk&done=$done");
         }else{
             $done = "Sửa không thành công!";
-            header("location: shkmanage.php?mashk=$ma_shk&done=$done");
+            header("location: ../shkmanage.php?mashk=$ma_shk&done=$done");
         }
     }else{
-        header("location: index.php");
+        header("location: ../index.php");
     }
 }
 ?>

@@ -1,9 +1,9 @@
 <?php
-require "../config/config.php";
-require "../model.php";
+require "../../config/config.php";
+require "../../model.php";
 $ps = new Process();
 if (!isset($_SESSION['LoginOK'])) {
-    header('location: ../index.php');
+    header('location: ../../index.php');
 } else {
     if (isset($_POST['btnDoiChuHo'])) {
         $count = 0;
@@ -27,7 +27,7 @@ if (!isset($_SESSION['LoginOK'])) {
         }
         if(count($resultall)==$count){
             $done = "Thay đổi chủ hộ hoàn tất!";
-            header("location: shkmanage.php?mashk={$row['ma_shk']}&done=$done");
+            header("location: ../shkmanage.php?mashk={$row['ma_shk']}&done=$done");
         }
     }
 }

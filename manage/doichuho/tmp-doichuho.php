@@ -1,9 +1,9 @@
 <?php
-require "../config/config.php";
-require "../model.php";
+require "../../config/config.php";
+require "../../model.php";
 $ps = new Process();
 if (!isset($_SESSION['LoginOK'])) {
-    header('location: ../index.php');
+    header('location: ../../index.php');
 } else {
     if(isset($_POST['cccd'])){
         $cccd = $_POST['cccd'];
@@ -31,7 +31,7 @@ if (!isset($_SESSION['LoginOK'])) {
         <?php
     }
     }else{
-        header('location: index.php');
+        header('location: ../index.php');
     }
 }
 ?>

@@ -15,7 +15,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../index.php">Trang chủ</a>
+                    <a class="navbar-brand" href="index.php">Trang chủ</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -26,12 +26,12 @@
                             <?php
                             if(!isset($_SESSION['LoginOK'])){
                             ?>
-                            <a href="../../login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
+                            <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
                             <?php
                             }else{
                             ?>
                             <a href="index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
-                            <a href="../../BTL_QLNK/logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
+                            <a href="logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
                             <?php
                             }
                             ?>
@@ -59,11 +59,33 @@
                 <div class="form-group mb-5">
                     <label for="type" class="form-label">Phân loại <span class="icon-required">(*)</span></label>
                     <select id="type" name="type" class="form-control">
-                      <option value="Chuyển Khẩu">Yêu cầu chuyển khẩu</option>
-                      <option value="Tách Khẩu">Yêu cầu tách khẩu</option>
-                      <option value="Câu hỏi khác">Khác</option>
+                        <?php
+                        if(isset($_GET['dang']) && $_GET['dang']==1){
+                        ?>
+                        <option value="1" selected>Gửi Câu Hỏi</option>
+                        <?php
+                        }else{
+                        ?>
+                        <option value="1">Gửi Câu Hỏi</option>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if(isset($_GET['dang']) && $_GET['dang']==2){
+                        ?>
+                        <option selected value="2">Yêu cầu chuyển khẩu</option>
+                        <?php
+                        }else{
+                        ?>
+                        <option value="2">Yêu cầu chuyển khẩu</option>
+                        <?php
+                        }
+                        ?>
                     </select>
                     <span class="form-message"></span>
+                </div>
+                <div class="form-group mb-5" id="hdch">
+                    
                 </div>
 
                 <h5 class="heading-content mt-5">TỜ KHAI THÔNG TIN</h5>
@@ -77,7 +99,7 @@
                     </div>
                 </div>
 
-                <h5 class="heading-content mt-5">THÔNG TIN Ý KIẾN CHỦ HỘ</h5>
+                <h5 class="heading-content mt-5">LÝ DO</h5>
                 <hr class="mb-3 line-space">
                 <div class="form-group mb-5">
                     <label for="content" class="form-label">Nội dung</label>
@@ -111,7 +133,7 @@
     </div>
 
     <?php
-        require "./partials-front/footer.php"
+        require "partials-front/footer.php"
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

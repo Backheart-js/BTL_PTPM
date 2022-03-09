@@ -1,7 +1,7 @@
 <?php
-include('../config/config.php');
+include('../../config/config.php');
 if (isset($_SESSION['LoginOK'])) {
-    include('../model.php');
+    include('../../model.php');
     $ps = new Process();
     if (isset($_POST['mashk'])) {
         $ma_shk = $_POST['mashk'];
@@ -16,9 +16,9 @@ if (isset($_SESSION['LoginOK'])) {
         
         <?php
     }else{
-        header("location: index.php");
+        header("location: ../index.php");
     }
 }else{
-    header("location: ../index.php");
+    header("location: ../../index.php");
 }
 ?>

@@ -1,10 +1,10 @@
 <?php
-require "../config/config.php";
-require('partials-front/header.php');
-require "../model.php";
+require "../../config/config.php";
+require('../partials-front/header.php');
+require "../../model.php";
 $ps = new Process();
 if (!isset($_SESSION['LoginOK'])) {
-    header('location: ../index.php');
+    header('location: ../../index.php');
 } else {
     if (isset($_GET['mashk'])) {
         $ma_shk = $_GET['mashk'];
@@ -22,7 +22,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 <div class="row">
                     <div class="col-md-8 ms-auto me-auto" style="background-color: #fafafa;">
                         <div class="mt-2 mb-2">
-                            <a href="index.php" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
+                            <a href="../shkmanage.php?mashk=<?php echo $ma_shk ?>" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
                                     arrow_back
                                 </span> <span>Quay lại</span> </a>
                         </div>
@@ -58,9 +58,9 @@ if (!isset($_SESSION['LoginOK'])) {
             </div>
         </main>
 <?php
-        require('partials-front/footer.php');
+        require('../partials-front/footer.php');
     } else {
-        header("location: index.php");
+        header("location: ../index.php");
     }
 }
 ?>

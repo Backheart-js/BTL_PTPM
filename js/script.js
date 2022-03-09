@@ -22,6 +22,7 @@ $(document).ready(function(){
         }
     })
 })
+//tìm kiếm sổ hộ khẩu tách
 $(document).ready(function(){
     $("#searchShkTk").click(function(){
         var mashk = $("#mashkTk").val();
@@ -46,6 +47,7 @@ $(document).ready(function(){
         }
     })
 })
+//tách khẩu
 $(document).ready(function(){
     $("#tHTK").click(function(){
         var mashk = $("#mashkTk").val();
@@ -73,6 +75,7 @@ $(document).ready(function(){
         }
     })
 })
+//Chuyển hộ khẩu
 $(document).ready(function(){
     $("#button-checkSHK").click(function(){
         var mashk = $("#mashk-check").val();
@@ -97,6 +100,7 @@ $(document).ready(function(){
         }
     })
 })
+
 function check_mashk(){
     if($("#mashk-check").val()!=""){
         if($(".check-shk").text()!="Sổ hộ khẩu không tồn tại hoặc trùng khớp!"){
@@ -116,7 +120,7 @@ function checkTK(){
         return false;
     }
 }
-
+//đổi chủ hộ
 $(document).ready(function(){
     $("#cccdchnew").change(function(){
         var cccd = $("#cccdchnew").val();
@@ -141,3 +145,4 @@ $(document).ready(function(){
         }
     })
 })
+//

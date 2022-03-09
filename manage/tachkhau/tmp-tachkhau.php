@@ -1,11 +1,11 @@
 <?php
 if (isset($_POST['mashk']) && isset($_POST['cccd'])) {
-    include('../config/config.php');
+    include('../../config/config.php');
     if (isset($_SESSION['LoginOK'])) {
-        include('../model.php');
+        include('../../model.php');
         $ps = new Process();
     } else {
-        header("location: ../index.php");
+        header("location: ../../index.php");
     }
 } else if (isset($_GET['mashk']) && isset($_GET['cccd'])) {
 } else {

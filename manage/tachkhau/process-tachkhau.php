@@ -1,7 +1,7 @@
 <?php
-include('../config/config.php');
+include('../../config/config.php');
 if (isset($_SESSION['LoginOK'])) {
-    include('../model.php');
+    include('../../model.php');
     $ps = new Process();
     if (isset($_POST['btnSubmitTachSHK'])) {
         $count = 0;
@@ -60,7 +60,7 @@ if (isset($_SESSION['LoginOK'])) {
         }
         if($count==2){
             $done = "Tách khẩu hoàn tất!";
-            header("location: shkmanage.php?mashk=$ma_shk&done=$done");
+            header("location: ../shkmanage.php?mashk=$ma_shk&done=$done");
         }
     }
 }

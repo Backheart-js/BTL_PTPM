@@ -1,10 +1,10 @@
 <?php
 // session_start();
-require "../config/config.php";
-require('partials-front/header.php');
+require "../../config/config.php";
+require('../partials-front/header.php');
 //$ps = new Process();
 if (!isset($_SESSION['LoginOK'])) {
-    header('location: ../index.php');
+    header('location: ../../index.php');
 } else {
     if(isset($_GET['cccd'])){
         $cccd = $_GET['cccd'];
@@ -17,7 +17,7 @@ if (!isset($_SESSION['LoginOK'])) {
     </head>
     <div class="container" style="margin-top: 72px;">
         <div class="mt-2 mb-2">
-            <a href="shkmanage.php" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
+            <a href="../shkmanage.php?mashk=<?php echo $rowinfoshk['ma_shk'] ?>" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
                     arrow_back
                 </span> <span>Quay lại</span> </a>
         </div>
@@ -28,7 +28,7 @@ if (!isset($_SESSION['LoginOK'])) {
             <h5>Số sổ hộ khẩu: <?php echo $rowinfoshk['ma_shk'] ?></h5>
 
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-md">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -151,8 +151,6 @@ if (!isset($_SESSION['LoginOK'])) {
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/Validator.js"></script>
     <script>
         Validator({
                 form: '#form-check',
@@ -171,11 +169,13 @@ if (!isset($_SESSION['LoginOK'])) {
                 ]
             })
     </script>
-    </body>
-
-    </html>
+    
 <?php
+require("../partials-front/footer.php");
     }
 }
 
 ?>
+</body>
+
+</html>

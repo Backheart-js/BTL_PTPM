@@ -1,7 +1,7 @@
 <?php
-include('../config/config.php');
+include('../../config/config.php');
 if (isset($_SESSION['LoginOK'])) {
-    include('../model.php');
+    include('../../model.php');
     $ps = new Process();
     if(isset($_POST['btnSubmitAddSHK'])){
         $count = 0;
@@ -59,12 +59,13 @@ if (isset($_SESSION['LoginOK'])) {
             $count++;
         }
         if($count==2){
-            echo "Hoàn tất đăng ký mời nhấn vào đây để xem chi tiết và thêm thông tin <a href=''></a>";
+            $link = "../shkmanage.php?mashk=$ma_shk";
+            echo "Hoàn tất đăng ký. Để xem chi tiết và thêm thông tin <a href='$link'>nhấn vào đây!</a>";
         }
     }else{
         header("location: add-shk.php");
     }
 }else{
-    header("location: ../index.php");
+    header("location: ../../index.php");
 }
 ?>

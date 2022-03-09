@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +21,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../index.php">Trang chủ</a>
+                    <a class="navbar-brand" href="index.php">Trang chủ</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -29,12 +32,12 @@
                             <?php
                             if (!isset($_SESSION['LoginOK'])) {
                             ?>
-                                <a href="../../login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
+                                <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
                             <?php
                             } else {
                             ?>
-                                <a href="index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
-                                <a href="../../BTL_QLNK/logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
+                                <a href="manage/index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
+                                <a href="logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
                             <?php
                             }
                             ?>
@@ -45,15 +48,21 @@
         </div>
     </header>
     <main>
-        <div class="container" style="background-color: #fafafa; min-height:662px">
+        <div class="container rounded" style="background-color: #fafafa; min-height:662px">
             <div class="row">
-                <div class="col-md-8 ms-auto me-auto">
+            <a href="index.php" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
+                        arrow_back
+                    </span> <span>Quay lại</span> </a>
+                <div class="col-md-8 ms-auto me-auto mb-5">
                     <h4 class="text-center mt-3">TRA CỨU THÔNG TIN THỦ TỤC VÀ TẢI XUỐNG</h4>
                     <form class="flex-row mt-5">
                         <label for="validationCustom02" class="form-label">Nhập mã thủ tục để tìm kiếm</label>
-                        <input class="form-control me-2" type="search" id="mashkTk" placeholder="" aria-label="Search">
-                        <button class="btn btn-success mt-1" id="searchShkTk" type="button">Tìm kiếm</button>
+                        <input class="form-control me-2" type="search" id="madon" placeholder="" aria-label="Search">
+                        <button class="btn btn-success mt-1" id="searchTT" type="button">Tìm kiếm</button>
                     </form>
+                    <div id="info-thutuc">
+
+                    </div>
                 </div>
             </div>
         </div>

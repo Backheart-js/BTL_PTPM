@@ -52,8 +52,12 @@ class Process{
         }
     }
     function getDate($date){
-        $string = explode("-", $date);
-        return $string[2].'/'.$string[1].'/'.$string[0];
+        if($date!=''){
+            $string = explode("-", $date);
+            return $string[2].'/'.$string[1].'/'.$string[0];
+        }else{
+            return '';
+        }
     }
 }
 ?>

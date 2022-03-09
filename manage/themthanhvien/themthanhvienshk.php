@@ -1,18 +1,18 @@
 <?php
-include('../config/config.php');
+include('../../config/config.php');
 if (isset($_SESSION['LoginOK'])) {
-    include('../model.php');
+    include('../../model.php');
     $ps = new Process();
     if (isset($_GET['mashk'])) {
         $mashk = $_GET['mashk'];
         $resultca = $ps->getALL("1", "loaichucvu", "tb_chucvu");
         $resultcb = $ps->getALL("2", "loaichucvu", "tb_chucvu");
-        include('partials-front/header.php');
+        include('../partials-front/header.php');
 ?>
         <main>
             <div class="container mb-5">
                 <div class="mt-2 mb-2">
-                    <a href="index.php" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
+                    <a href="../shkmanage.php?mashk=<?php echo $mashk ?>" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
                             arrow_back
                         </span> <span>Quay lại</span> </a>
                 </div>
@@ -141,11 +141,11 @@ if (isset($_SESSION['LoginOK'])) {
             })
         </script>
 <?php
-        include('partials-front/footer.php');
+        include('../partials-front/footer.php');
     } else {
-        header("location: index.php");
+        header("location: ../index.php");
     }
 } else {
-    header("location: ../index.php");
+    header("location: ../../index.php");
 }
 ?>

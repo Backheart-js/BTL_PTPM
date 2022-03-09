@@ -1,15 +1,15 @@
 <?php
-include('../config/config.php');
+include('../../config/config.php');
 if (isset($_SESSION['LoginOK'])) {
-    include('../model.php');
-    include('partials-front/header.php');
+    include('../../model.php');
+    include('../partials-front/header.php');
     $ps = new Process();
     $resultca = $ps->getALL("1","loaichucvu","tb_chucvu");
     $resultcb = $ps->getALL("2","loaichucvu","tb_chucvu");
 ?>
-    <main style="background-color: #fafafa;" class="container rounded mt-3">
+    <main style="background-color: #fafafa;" class="container rounded mt-3 mb-5">
         <div class="col-md-2">
-            <a href="index.php" class="text-decoration-none btn btn-primary"><i class="bi bi-arrow-left"></i> Quay Lại</a>
+            <a href="../index.php" class="text-decoration-none btn btn-primary"><i class="bi bi-arrow-left"></i> Quay Lại</a>
         </div>
         <div class="container pt-2  ms-3 me-4">
             <h4 class="text-center">TẠO SỔ HỘ KHẨU MỚI</h4>
@@ -177,8 +177,8 @@ if (isset($_SESSION['LoginOK'])) {
         })
     </script>
 <?php
-include("partials-front/footer.php");
+include("../partials-front/footer.php");
 } else {
-    header("location: ../index.php");
+    header("location: ../../index.php");
 }
 ?>

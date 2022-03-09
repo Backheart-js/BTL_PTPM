@@ -17,7 +17,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../index.php">Trang chủ</a>
+                    <a class="navbar-brand" href="index.php">Trang chủ</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -28,12 +28,12 @@
                             <?php
                             if (!isset($_SESSION['LoginOK'])) {
                             ?>
-                                <a href="../../login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
+                                <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
                             <?php
                             } else {
                             ?>
                                 <a href="index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
-                                <a href="../../BTL_QLNK/logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
+                                <a href="logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
                             <?php
                             }
                             ?>

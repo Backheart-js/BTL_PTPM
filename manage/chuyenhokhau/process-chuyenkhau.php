@@ -1,9 +1,9 @@
 <?php
-require "../config/config.php";
+require "../../config/config.php";
 if (!isset($_SESSION['LoginOK'])) {
-    header('location: ../index.php');
+    header('location: ../../index.php');
 } else {
-    if(isset($_POST['smUpdateshk'])){
+    // if(isset($_POST['cccd'])){
         $count = 0;
         $cccd = $_POST['cccdupdate'];
         $ma_shk = $_POST['mashk-check'];
@@ -50,13 +50,13 @@ if (!isset($_SESSION['LoginOK'])) {
         $ma_shk = $rowinfoshk['ma_shk'];
         if($count==1){
             $done = "Chuyển khẩu thành công!";
-            header("location: shkmanage.php?mashk=$ma_shk&done=$done");
+            header("location: ../shkmanage.php?mashk=$ma_shk&done=$done");
         }else{
             $done = "Chuyển khẩu không thành công!";
-            header("location: shkmanage.php?mashk=$ma_shk&done=$done");
+            header("location: ../shkmanage.php?mashk=$ma_shk&done=$done");
         }
-    }else{
-        header("location: index.php");
-    }
+    // }else{
+    //     //header("location: ../index.php");
+    // }
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
-include('../config/config.php');
+include('../../config/config.php');
 if (isset($_SESSION['LoginOK'])) {
-    include('../model.php');
+    include('../../model.php');
     $ps = new Process();
     if (isset($_POST['mashk'])) {
         $ma_shk = $_POST['mashk'];
@@ -22,17 +22,17 @@ if (isset($_SESSION['LoginOK'])) {
         ?>
         </select>
         <button class="btn btn-success mt-1" id="tHTK" type="button">Tiến hành tách khẩu</button>
-        <script src="../js/script.js"></script>
+        <script src="../../js/script.js"></script>
     <?php
     }else{
         echo "<p style='color:black;'>Không tìm thấy sổ hộ khẩu như mã!</p>";
     }
 } else {
-    header("location: index.php");
+    header("location: ../index.php");
 }
     ?>
 <?php
 } else {
-    header("location: ../index.php");
+    header("location: ../../index.php");
 }
 ?>
