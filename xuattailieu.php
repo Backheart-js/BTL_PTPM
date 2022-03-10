@@ -11,7 +11,8 @@ $mangngay = explode("/", $ngay);
 $ngayt = $mangngay[0];
 $thangt = $mangngay[1];
 $namt = $mangngay[2];
-
+echo $ngaybatdau;
+$templateProcessor->setValue('loaidon', $loaitt);
 $templateProcessor->setValue('xa', 'Phú Yên');
 $templateProcessor->setValue('hoten', $hoten);
 $templateProcessor->setValue('ngaysinh', $ps->getDate($ngaysinh));
@@ -26,5 +27,7 @@ $templateProcessor->setValue('ten', $ten);
 $templateProcessor->setValue('ngay', $ngayt);
 $templateProcessor->setValue('thang', $thangt);
 $templateProcessor->setValue('nam', $namt);
+$templateProcessor->setValue('don', $don);
 $templateProcessor->saveAs('tailieu/template'.$madon.'.docx');
+$link = "tailieu/template".$madon.".docx";
 ?>

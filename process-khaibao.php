@@ -13,7 +13,7 @@
             die("Connection failed: " .mysqli_connect_error());
         }
         $madon = strtoupper(substr(md5(rand()), 0, 9));
-        $conganxa = "X";
+        $conganxa = "Phú Yên";
         $type = $_POST['type'];
         $fullname=$_POST['fullname'];
         $address=$_POST['address'];

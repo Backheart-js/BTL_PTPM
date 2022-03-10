@@ -8,6 +8,7 @@ if ($_POST['madon']) {
     if($resultTT!=false || $resultTV!=false){
         $loaitt = '';
         if ($resultTT != false) {
+            $don = "tạm trú";
             $loaitt = "TẠM TRÚ";
             $hoten = $resultTT['hoten'];
             $ngaysinh = $resultTT['ngaysinh'];
@@ -22,11 +23,12 @@ if ($_POST['madon']) {
             $phanhoi = $resultTT['phanhoi'];
             if($resultTT['xacnhan']==1){
                 $xacnhan = "Đã xác nhận";
-                $ngaybatdau = $resultTT['ngaybatdau'];
+                $ngaybatdau = $ps->getDate($resultTT['ngaybatdau']);
             }else{
                 $xacnhan = "Đang chờ phê duyệt";
             }
         }else{
+            $don = "tạm vắng";
             $loaitt = "TẠM VẮNG";
             $hoten = $resultTV['hoten'];
             $ngaysinh = $resultTV['ngaysinh'];
