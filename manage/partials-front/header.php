@@ -34,8 +34,8 @@
                             <?php
                             }else{
                             ?>
-                            <a href="index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
-                            <a href="../../BTL_QLNK/logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
+                            <a href="../index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
+                            <a href="../../logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
                             <?php
                             }
                             ?>

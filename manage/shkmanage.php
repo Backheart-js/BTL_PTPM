@@ -42,12 +42,12 @@ if (isset($_SESSION['LoginOK'])) {
                                         <?php
                                         if (!isset($_SESSION['LoginOK'])) {
                                         ?>
-                                            <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
+                                            <a href="../login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
                                         <?php
                                         } else {
                                         ?>
-                                            <a href="manage/index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
-                                            <a href="logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
+                                            <a href="index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
+                                            <a href="../logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
                                         <?php
                                         }
                                         ?>

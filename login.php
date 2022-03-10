@@ -3,7 +3,7 @@ require "./partials-front/header.php";
 if (!isset($_SESSION['LoginOK'])) {
 ?>
     <main style="padding: 150px;" id="body-index">
-        <div class="col-md-4 ms-auto me-auto bg-white rounded p-3">
+        <div class="col-md-8 ms-auto me-auto bg-white rounded p-3" style="width:200px">
             <div class="mt-2 mb-2">
                 <a href="index.php" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
                         arrow_back
