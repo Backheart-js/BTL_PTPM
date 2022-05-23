@@ -26,11 +26,12 @@ if (isset($_POST['mashk']) && isset($_POST['cccd']) || isset($_GET['mashk']) && 
 ?>
     <div class="col-md-8 ms-auto me-auto mb-5 pt-2 bg-white rounded shadow-sm">
         <h4 class="text-center">THÊM THÔNG TIN CHO SỔ HỘ KHẨU MỚI</h4>
-        <form class="needs-validation" action="process-tachkhau.php" method="POST" onsubmit="return checkTK()" id="form-check" novalidate>
+        <form class="needs-validation" action="process-tachkhau.php" method="POST" onsubmit="return checkaddshk2()" id="form-check" validate>
             <div class="row g-3">
                 <div class="col-md-12 form-group">
                     <label for="validationCustom01" class="form-label">MÃ SỔ HỘ KHẨU</label>
-                    <input type="text" class="form-control" id="mashknew" name="mashknew" required>
+                    <input type="text" class="form-control" id="mashk" name="mashk" required>
+                    <div class="grmessage-checkshk"><span id='message-checkshk'></span></div>
                     <span class="form-message"></span>
                 </div>
                 <div class="col-md-6 form-group">
@@ -184,29 +185,29 @@ if (isset($_POST['mashk']) && isset($_POST['cccd']) || isset($_GET['mashk']) && 
     <script src="../js/script.js"></script>
     <script src="../js/Validator.js"></script>
     <script>
-        Validator({
-            form: '#form-check',
-            formGroupSelector: '.form-group',
-            errorSelector: '.form-message',
-            rules: [
-                Validator.isRequired('#mashknew', 'Vui lòng nhập mã sổ hộ khẩu mới'),
-                Validator.isRequired('#hotenchuho', 'Vui lòng nhập họ tên chủ hộ'),
-                Validator.isRequired('#noithuongtru', 'Vui lòng điền đầy đủ nơi thường trú'),
-                Validator.isRequired('#ngaycap', 'Vui lòng điền đầy đủ ngày cấp'),
-                Validator.isRequired('#truongcongana', 'Vui lòng chọn trưởng công an phê duyệt'),
-                Validator.isRequired('#thanhpho', 'Vui lòng nhập tỉnh/thành phố'),
-                Validator.isRequired('#cccd', 'Vui lòng nhập mã căn cước công dân'),
-                Validator.isRequired('#hoten', 'Vui lòng nhập họ tên'),
-                Validator.isRequired('#ngaysinh', 'Vui lòng chọn ngày sinh'),
-                Validator.isRequired('#gioitinh', 'Vui lòng chọn giới tính'),
-                Validator.isRequired('#nguyenquan', 'Vui lòng nhập nguyên quán'),
-                Validator.isRequired('#dantoc', 'Vui lòng nhập dân tộc'),
-                Validator.isRequired('#quoctich', 'Vui lòng nhập quốc tịch'),
-                Validator.isRequired('#nghenghiepnoilamviec', 'Vui lòng điền nghề nghiệp và nơi làm việc'),
-                Validator.isRequired('#canbodangky', 'Vui lòng chọn cán bộ đăng ký'),
-                Validator.isRequired('#truongconganb', 'Vui lòng chọn trưởng công an phê duyệt')
-            ]
-        })
+        // Validator({
+        //     form: '#form-check',
+        //     formGroupSelector: '.form-group',
+        //     errorSelector: '.form-message',
+        //     rules: [
+        //         Validator.isRequired('#mashknew', 'Vui lòng nhập mã sổ hộ khẩu mới'),
+        //         Validator.isRequired('#hotenchuho', 'Vui lòng nhập họ tên chủ hộ'),
+        //         Validator.isRequired('#noithuongtru', 'Vui lòng điền đầy đủ nơi thường trú'),
+        //         Validator.isRequired('#ngaycap', 'Vui lòng điền đầy đủ ngày cấp'),
+        //         Validator.isRequired('#truongcongana', 'Vui lòng chọn trưởng công an phê duyệt'),
+        //         Validator.isRequired('#thanhpho', 'Vui lòng nhập tỉnh/thành phố'),
+        //         Validator.isRequired('#cccd', 'Vui lòng nhập mã căn cước công dân'),
+        //         Validator.isRequired('#hoten', 'Vui lòng nhập họ tên'),
+        //         Validator.isRequired('#ngaysinh', 'Vui lòng chọn ngày sinh'),
+        //         Validator.isRequired('#gioitinh', 'Vui lòng chọn giới tính'),
+        //         Validator.isRequired('#nguyenquan', 'Vui lòng nhập nguyên quán'),
+        //         Validator.isRequired('#dantoc', 'Vui lòng nhập dân tộc'),
+        //         Validator.isRequired('#quoctich', 'Vui lòng nhập quốc tịch'),
+        //         Validator.isRequired('#nghenghiepnoilamviec', 'Vui lòng điền nghề nghiệp và nơi làm việc'),
+        //         Validator.isRequired('#canbodangky', 'Vui lòng chọn cán bộ đăng ký'),
+        //         Validator.isRequired('#truongconganb', 'Vui lòng chọn trưởng công an phê duyệt')
+        //     ]
+        // })
     </script>
 <?php
 }

@@ -2,13 +2,13 @@
         <div class="container-fluid">
             <div class="d-flex flex-row justify-content-around" style="height: 30px;">
                 <div>
-                    <span class="fs-6">&copy; <span class="fs-6 text-center">Bản quyền thuộc công an xã ...</span></span>
+                    <span class="fs-6">&copy; <span class="fs-6 text-center">Bản quyền thuộc công an phường Hoàn Kiếm</span></span>
                 </div>
                 <div>
-                    <span class="fs-6"><span class="fs-6 text-center">Hotline: 0366887398</span></span>
+                    <span class="fs-6"><span class="fs-6 text-center">Hotline: +84 0124 986 666</span></span>
                 </div>
                 <div>
-                    <span class="fs-6"><span class="fs-6 text-center">Email: Daodan2612@gmail.com</span></span>
+                    <span class="fs-6"><span class="fs-6 text-center">Email: binhnguyen29122001@gmail.com</span></span>
                 </div>
             </div>
         </div>

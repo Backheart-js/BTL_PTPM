@@ -18,7 +18,7 @@ if (!isset($_SESSION['LoginOK'])) {
 ?>
 
         <head>
-            <title>Thành viên</title>
+            <title>Chuyển khẩu</title>
         </head>
         <div class="container" style="margin-top: 72px;">
             <div class="mt-2 mb-2">
@@ -46,7 +46,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     <!-- Chỉnh sửa  -->
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
-                            <form action="process-chuyenkhau.php" method="POST" class="form-control mt-3" id="form-check" onsubmit="return check_mashk()" novalidate>
+                            <form action="process-chuyenkhau.php" method="POST" class="form-control mt-3" id="form-check" onsubmit="return check_mashk()" validate>
                                 <div class="d-flex flex-row align-items-center justify-content-between">
                                     <span class="me-2 fw-bold fs-1">Mã số cccd cần chuyển: </span>
                                     <input class="form-control mt-2" name="cccdupdate" value="<?php echo $cccd; ?>" style="max-width: 150px;" readonly>
@@ -74,7 +74,7 @@ if (!isset($_SESSION['LoginOK'])) {
                                             </select> -->
                                             <div class="row">
                                                 <div class="col-md-6 form-group">
-                                                    <input type="text" class="form-control" id="mashk-check" name="mashk-check">
+                                                    <input type="text" class="form-control" id="mashk-check" name="mashk-check" required>
                                                     <span class="form-message"></span>
                                                 </div>
                                                 <div class="col-md-6">
@@ -111,7 +111,7 @@ if (!isset($_SESSION['LoginOK'])) {
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="validationCustom02" class="form-label">GIỚI TÍNH</label>
-                                        <select class="form-select" aria-label="Default select example" id="gioitinh" name="gioitinh">
+                                        <select class="form-select" aria-label="Default select example" id="gioitinh" name="gioitinh" required>
                                             <?php
                                             if ($rownc['gioitinh'] == "Nam") {
                                             ?>
@@ -210,28 +210,28 @@ if (!isset($_SESSION['LoginOK'])) {
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script>
-            Validator({
-                form: '#form-check',
-                formGroupSelector: '.form-group',
-                errorSelector: '.form-message',
-                rules: [
-                    Validator.isRequired('#mashk-check', 'Vui lòng nhập mã căn cước công dân'),
-                    Validator.isRequired('#quanhech', 'Vui lòng điền quan hệ với chủ hộ'),
-                    Validator.isRequired('#hoten', 'Vui lòng điền đầy đủ họ tên'),
-                    Validator.isRequired('#ngaysinh', 'Vui lòng điền đầy đủ ngày sinh'),
-                    Validator.isRequired('#gioitinh', 'Vui lòng chọn giới tính'),
-                    Validator.isRequired('#nguyenquan', 'Vui lòng điền đầy đủ nguyên quán'),
-                    Validator.isRequired('#dantoc', 'Vui lòng nhập dân tộc'),
-                    Validator.isRequired('#quoctich', 'Vui lòng nhập quốc tịch'),
-                    Validator.isRequired('#nghenghiepnoilamviec', 'Vui lòng điền nghề nghiệp và nơi làm việc'),
-                    Validator.isRequired('#canbodangky', 'Vui lòng chọn cán bộ đăng ký'),
-                    Validator.isRequired('#truongconganb', 'Vui lòng chọn trưởng công an phê duyệt')
-                ]
-            })
+            // Validator({
+            //     form: '#form-check',
+            //     formGroupSelector: '.form-group',
+            //     errorSelector: '.form-message',
+            //     rules: [
+            //         Validator.isRequired('#mashk-check', 'Vui lòng nhập mã căn cước công dân'),
+            //         Validator.isRequired('#quanhech', 'Vui lòng điền quan hệ với chủ hộ'),
+            //         Validator.isRequired('#hoten', 'Vui lòng điền đầy đủ họ tên'),
+            //         Validator.isRequired('#ngaysinh', 'Vui lòng điền đầy đủ ngày sinh'),
+            //         Validator.isRequired('#gioitinh', 'Vui lòng chọn giới tính'),
+            //         Validator.isRequired('#nguyenquan', 'Vui lòng điền đầy đủ nguyên quán'),
+            //         Validator.isRequired('#dantoc', 'Vui lòng nhập dân tộc'),
+            //         Validator.isRequired('#quoctich', 'Vui lòng nhập quốc tịch'),
+            //         Validator.isRequired('#nghenghiepnoilamviec', 'Vui lòng điền nghề nghiệp và nơi làm việc'),
+            //         Validator.isRequired('#canbodangky', 'Vui lòng chọn cán bộ đăng ký'),
+            //         Validator.isRequired('#truongconganb', 'Vui lòng chọn trưởng công an phê duyệt')
+            //     ]
+            // })
         </script>
-        
+
 <?php
-require("../partials-front/footer.php");
+        require("../partials-front/footer.php");
     }
 }
 

@@ -5,7 +5,7 @@ if (isset($_SESSION['LoginOK'])) {
     $ps = new Process();
     if (isset($_POST['btnSubmitTachSHK'])) {
         $count = 0;
-        $ma_shk = $_POST['mashknew'];
+        $ma_shk = $_POST['mashk'];
         $hotenchuho = $_POST['hotenchuho'];
         $noithuongtru = $_POST['noithuongtru'];
         $ngaycap = $_POST['ngaycap'];

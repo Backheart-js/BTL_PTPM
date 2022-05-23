@@ -9,6 +9,9 @@ if (isset($_SESSION['LoginOK'])) {
         $resultcb = $ps->getALL("2", "loaichucvu", "tb_chucvu");
         include('../partials-front/header.php');
 ?>
+<head>
+    <title>Thêm thành viên</title>
+</head>
         <main>
             <div class="container mb-5">
                 <div class="mt-2 mb-2">
@@ -19,12 +22,13 @@ if (isset($_SESSION['LoginOK'])) {
                 <h4 class="text-center mt-2">THÊM THÀNH VIÊN CHO SỔ HỘ KHẨU: <?php echo $mashk ?></h4>
                 <div class="row">
                     <div class="col-md-8 ms-auto me-auto border border-secondary rounded shadow-sm">
-                        <form class="needs-validation" action="process-themthanhvienshk.php" method="POST" id="form-check" novalidate>
+                        <form class="needs-validation" action="process-themthanhvienshk.php" method="POST" onsubmit="return checkaddshk3()" id="form-check" validate>
                             <div class="row g-3 mt-2">
                                 <input type="text" class="form-control" id="validationCustom01" name="mashk" value="<?php echo $mashk ?>" style="display: none;" required>
                                 <div class="col-md-6 form-group">
                                     <label for="validationCustom01" class="form-label">MÃ CĂN CƯỚC CÔNG DÂN</label>
                                     <input type="text" class="form-control" id="cccd" name="cccd" required>
+                                    <div class="grmessage-checkcccd"><span id='message-checkcccd'></span></div>
                                     <span class="form-message"></span>
                                 </div>
                                 <div class="col-md-6 form-group">
@@ -121,24 +125,24 @@ if (isset($_SESSION['LoginOK'])) {
         </main>
         <script src="../js/Validator.js"></script>
         <script>
-            Validator({
-                form: '#form-check',
-                formGroupSelector: '.form-group',
-                errorSelector: '.form-message',
-                rules: [
-                    Validator.isRequired('#cccd', 'Vui lòng nhập mã căn cước công dân'),
-                    Validator.isRequired('#quanhech', 'Vui lòng điền quan hệ với chủ hộ'),
-                    Validator.isRequired('#hoten', 'Vui lòng điền đầy đủ họ tên'),
-                    Validator.isRequired('#ngaysinh', 'Vui lòng điền đầy đủ ngày sinh'),
-                    Validator.isRequired('#gioitinh', 'Vui lòng chọn giới tính'),
-                    Validator.isRequired('#nguyenquan', 'Vui lòng điền đầy đủ nguyên quán'),
-                    Validator.isRequired('#dantoc', 'Vui lòng nhập dân tộc'),
-                    Validator.isRequired('#quoctich', 'Vui lòng nhập quốc tịch'),
-                    Validator.isRequired('#nghenghiepnoilamviec', 'Vui lòng điền nghề nghiệp và nơi làm việc'),
-                    Validator.isRequired('#canbodangky', 'Vui lòng chọn cán bộ đăng ký'),
-                    Validator.isRequired('#truongconganb', 'Vui lòng chọn trưởng công an phê duyệt')
-                ]
-            })
+            // Validator({
+            //     form: '#form-check',
+            //     formGroupSelector: '.form-group',
+            //     errorSelector: '.form-message',
+            //     rules: [
+            //         Validator.isRequired('#cccd', 'Vui lòng nhập mã căn cước công dân'),
+            //         Validator.isRequired('#quanhech', 'Vui lòng điền quan hệ với chủ hộ'),
+            //         Validator.isRequired('#hoten', 'Vui lòng điền đầy đủ họ tên'),
+            //         Validator.isRequired('#ngaysinh', 'Vui lòng điền đầy đủ ngày sinh'),
+            //         Validator.isRequired('#gioitinh', 'Vui lòng chọn giới tính'),
+            //         Validator.isRequired('#nguyenquan', 'Vui lòng điền đầy đủ nguyên quán'),
+            //         Validator.isRequired('#dantoc', 'Vui lòng nhập dân tộc'),
+            //         Validator.isRequired('#quoctich', 'Vui lòng nhập quốc tịch'),
+            //         Validator.isRequired('#nghenghiepnoilamviec', 'Vui lòng điền nghề nghiệp và nơi làm việc'),
+            //         Validator.isRequired('#canbodangky', 'Vui lòng chọn cán bộ đăng ký'),
+            //         Validator.isRequired('#truongconganb', 'Vui lòng chọn trưởng công an phê duyệt')
+            //     ]
+            // })
         </script>
 <?php
         include('../partials-front/footer.php');
