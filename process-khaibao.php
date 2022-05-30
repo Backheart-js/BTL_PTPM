@@ -30,16 +30,16 @@
     
 
         if($type == 'TamTru') {
-            $sql = "INSERT INTO tb_tamtru (ma_dontt, conganxa, hoten,ngaysinh,cccd,cccd_noicap,cccd_capngay,diachithuongtru,choohiennay,lydo,email, xacnhan, phanhoi) 
+            $sql = "INSERT INTO tamtru (ma_dontt, conganxa, hoten,ngaysinh,cccd,cccd_noicap,cccd_capngay,diachithuongtru,choohiennay,lydo,email, xacnhan, phanhoi) 
                      VALUES ('$madon','$conganxa','$fullname','$birthday','$idcard','$idcard_address','$idcard_date','$address','$address_now','$other','$email', 0, '$feedback')"; 
-                    $subject = "[Xã Phú Yên] Thủ tục tạm trú của bạn đã được gửi đi!";
+                    $subject = "Thủ tục tạm trú của bạn đã được gửi đi!";
                     $body = "Việc thực hiện tạo thủ tục tạm trú trực tuyến của bạn đã hoàn tất và chờ được xác nhận. Mã đơn của bạn là: ".$madon.". Xem thông tin chi tiết về thủ tục <a href='http://localhost/BTL_QLNK/taixuong.php?madon={$madon}'>tại đây.</a>";
                     sendemailforAccount($email, $subject, $body);
         }
         else {
-            $sql = "INSERT INTO tb_tamvang (ma_dontv, conganxa, hoten,ngaysinh,cccd,cccd_noicap,cccd_capngay,diachithuongtru,choohiennay,lydo,email, xacnhan, phanhoi) 
+            $sql = "INSERT INTO tamvang (ma_dontv, conganxa, hoten,ngaysinh,cccd,cccd_noicap,cccd_capngay,diachithuongtru,choohiennay,lydo,email, xacnhan, phanhoi) 
                VALUES ('$madon','$conganxa','$fullname','$birthday','$idcard','$idcard_address','$idcard_date','$address','$address_now','$other','$email', 0, '$feedback')";
-               $subject = "[Xã Phú Yên] Thủ tục tạm vắng của bạn đã được gửi đi!";
+               $subject = "Thủ tục tạm vắng của bạn đã được gửi đi!";
                $body = "Việc thực hiện tạo thủ tục tạm vắng trực tuyến của bạn đã hoàn tất và chờ được xác nhận. Mã đơn của bạn là: ".$madon.". Xem thông tin chi tiết về thủ tục <a href='http://localhost/BTL_QLNK/taixuong.php?madon={$madon}'>tại đây.</a>";
                sendemailforAccount($email, $subject, $body);
         }

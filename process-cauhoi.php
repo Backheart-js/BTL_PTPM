@@ -14,7 +14,7 @@ if(isset($_POST['btnSubmit'])){
     $sdt = $_POST['number'];
     $trangthai = 0;
     if($_POST['type']==1){
-        $sql = "Insert into tb_cauhoi values('{$mach}', '{$hoten}', '{$email}', '{$sdt}', '{$lydo}', '{$ngayhoi}', '{$trangthai}', '{$loaicauhoi}')";
+        $sql = "Insert into cauhoi values('{$mach}', '{$hoten}', '{$email}', '{$sdt}', '{$lydo}', '{$ngayhoi}', '{$trangthai}', '{$loaicauhoi}')";
         if(mysqli_query($conn, $sql)){
             $statusMsg = "Câu hỏi đã được gửi đi thành công!";
             header("location: cauhoi.php?dang=1&phanhoi=$statusMsg");
@@ -41,7 +41,7 @@ if(isset($_POST['btnSubmit'])){
                 if(!file_exists($targetFilePath)){
                     if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
                         // Insert image file name into database
-                        $sql = "Insert into tb_cauhoi values('{$mach}', '{$hoten}', '{$email}', '{$sdt}', '{$fileName}', '{$ngayhoi}', '{$trangthai}', '{$loaicauhoi}')";
+                        $sql = "Insert into cauhoi values('{$mach}', '{$hoten}', '{$email}', '{$sdt}', '{$fileName}', '{$ngayhoi}', '{$trangthai}', '{$loaicauhoi}')";
                         if(mysqli_query($conn, $sql)){
                             $statusMsg = "Tệp tin ".$fileName. " đã được gửi đi thành công. Mã câu hỏi của bạn là: $mach và hãy chờ đợi Công An Xã phê duyệt và xử lý đơn của bạn!\nNhấn vào <a href='cauhoi.php?dang=2'>đây</a> để trở lại trang trước.";
                         }else{
