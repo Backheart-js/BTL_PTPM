@@ -117,20 +117,71 @@
         right: 0;
         text-align: center;
         font-weight: 600;
+    }
 
+    .setting-options {
+        position: relative;
+        height: 130px;
+    }
+    .setting-options-list {
+        position: absolute;
+        right: 0;
+        left: 0;
+        list-style: none;
+        padding-left: 40px;
+        animation: slideDown ease-in-out .3s;
+    }
+    .setting-options-item {
+        margin-bottom: 12px;
+    }
+
+    .language,
+    .background {
+        justify-content: space-between;
+        margin-right: 30px;
+    }
+
+    .language span,
+    .background span {
+        color: #999;
+        font-size: 16px;
+    }
+
+    .language select {
+        padding: 4px 4px;
+        border-radius: 4px;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            top: -60px;
+        }
+        50% {
+            opacity: 0.3;
+
+        }
+        100% {
+            opacity: 1;
+            top: 0px;
+        }
+    }
+
+    .d-hidden {
+        display: none;
     }
 
 </style>
 <body>
     <div id="sidebar" class="position-fixed">
-        <a class="home-title">
+        <a class="home-title" href="">
             <div class="homepage">
                 Trang chủ
             </div>
         </a>
         <div class="search">
             <input type="text" class="search-input" placeholder="Tìm kiếm ...">
-            <input type="submit" class="search-submit btn">
+            <input type="submit" class="search-submit btn" value="Tìm kiếm">
         </div>
         <hr style="background-color: #ccc; margin: 0;">
 
@@ -176,8 +227,24 @@
                 <i class="fa-solid fa-angle-down "></i>
             </div>
         </div>
-        <div class="setting-options">
-            
+        <div class="setting-options d-hidden">
+            <ul class="setting-options-list">
+                <li class="setting-options-item">
+                    <div class="language d-flex">
+                        <span>Ngôn ngữ</span>
+                        <select name="" id="">
+                            <option value="">Vietnamese</option>
+                            <option value="">English</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="setting-options-item">
+                    <div class="background d-flex">
+                        <span>Chủ đề</span>
+                        <input type="checkbox" id="">
+                    </div>
+                </li>
+            </ul>
         </div>
 
         <div class="admin">
@@ -186,5 +253,20 @@
         </div>
         
     </div>
+
+    <script>
+        const setting = document.querySelector('.setting');
+        let isOpen = false;
+
+        const handleClick = () => {
+            let setting_options = document.querySelector('.setting-options');
+            isOpen = !isOpen;
+
+            setting_options.classList.toggle('d-block', isOpen);
+            setting_options.classList.toggle('d-hidden', !isOpen);
+        }
+
+        setting.addEventListener('click', handleClick);
+    </script>
 </body>
 </html>
