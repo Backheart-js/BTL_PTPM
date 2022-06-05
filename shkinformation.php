@@ -17,42 +17,15 @@ session_start();
 </head>
 
 <body class="bg-light">
-    <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow-sm">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">Trang chủ</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        </ul>
-                        <form class="d-flex">
-                            <?php
-                            if (!isset($_SESSION['LoginOK'])) {
-                            ?>
-                                <a href="login.php"><button class="btn btn-outline-success" type="button">Đăng nhập</button></a>
-                            <?php
-                            } else {
-                            ?>
-                                <a href="manage/index.php"><button class="btn btn-outline-success me-2" type="button">Quản Lý</button></a>
-                                <a href="logout.php"><button class="btn btn-outline-success" type="button">Đăng xuất</button></a>
-                            <?php
-                            }
-                            ?>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <?php
+        require "./partials-front/header.php";
+    ?>
     <?php
     if (isset($_POST['tracuu'])) {
         include("model.php");
         $mashk = $_POST['mashk'];
         $ps = new Process();
-        $result = $ps->getALL($mashk, "ma_shk", "tb_sohokhau");
+        $result = $ps->getALL($mashk, "ma_shk", "sohokhau");
         if ($result != false) {
             $row = $result[0];
             $resultct = $ps->getALL($mashk, "ma_shk", "tb_chitietshk");
@@ -102,7 +75,7 @@ session_start();
                                 </div>
                                 <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                     <?php
-                                    $cb = $ps->getCB($row['truongcongan'], "ma_chucvu", "tb_chucvu");
+                                    $cb = $ps->getCB($row['truongcongan'], "ma_chucvu", "chucvu");
                                     ?>
                                     <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-5"><?php echo $cb['hoten'] ?></span>
                                 </div>
@@ -149,13 +122,13 @@ session_start();
                                 </div>
                                 <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                     <?php
-                                    $cb = $ps->getCB($ch['canbodangky'], "ma_chucvu", "tb_chucvu");
+                                    $cb = $ps->getCB($ch['canbodangky'], "ma_chucvu", "chucvu");
                                     ?>
                                     <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
                                 </div>
                                 <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                     <?php
-                                    $cb = $ps->getCB($ch['truongcongan'], "ma_chucvu", "tb_chucvu");
+                                    $cb = $ps->getCB($ch['truongcongan'], "ma_chucvu", "chucvu");
                                     ?>
                                     <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
                                 </div>
@@ -186,9 +159,6 @@ session_start();
                                             <span class="fw-bold fs-6">Dân tộc: </span><span class="fs-4"><?php echo $ngdan['dantoc'] ?></span>
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                            <span class="fw-bold fs-6">Tôn giáo: </span><span class="fs-4"><?php echo $ngdan['tongiao'] ?></span>
-                                        </div>
-                                        <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                             <span class="fw-bold fs-6">Quốc tịch: </span><span class="fs-4"><?php echo $ngdan['quoctich'] ?></span>
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
@@ -199,13 +169,13 @@ session_start();
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                             <?php
-                                            $cb = $ps->getCB($ngdan['canbodangky'], "ma_chucvu", "tb_chucvu");
+                                            $cb = $ps->getCB($ngdan['canbodangky'], "ma_chucvu", "chucvu");
                                             ?>
                                             <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                             <?php
-                                            $cb = $ps->getCB($ngdan['truongcongan'], "ma_chucvu", "tb_chucvu");
+                                            $cb = $ps->getCB($ngdan['truongcongan'], "ma_chucvu", "chucvu");
                                             ?>
                                             <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
                                         </div>
