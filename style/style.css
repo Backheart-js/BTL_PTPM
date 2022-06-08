@@ -1,0 +1,142 @@
+/* CSS for index */
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+#header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.main-background{
+    position: relative;
+    background-image: url(../images/background/bg-index.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    padding-top: 55%;
+}
+.background-wrapper {
+    position: absolute;
+    padding: 28px 0;
+    top: 35%;
+    width: 75%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: rgba(30, 45, 59, 0.6);
+    border-radius: 10px;
+}
+
+.tracuu-btn {
+    margin-top: 8px;
+    width: 100px;
+    background-color: #e0c320;
+    border: 2px solid #e0c320;
+    transition: all 0.3s ease-out;
+}
+.tracuu-btn:hover {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.main-procedure {
+    background-color: #f1cf17;
+    padding: 20px 0 28px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.procedure-opiton {
+    background-color: #333;
+}
+.procedure-opiton:hover {
+    background-color: #000;
+}
+
+.main__contact-content {
+}
+.main__contact-map {
+
+}
+.main__contact-info {
+
+}
+
+.contact__info-desc {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.conntact__icon {
+    padding: 8px 0;
+    width: 24px;
+}
+.contact__noti {
+
+}
+.contact__input {
+    width: 80%;
+    padding: 8px 8px;
+}
+.contact__submit {
+    height: 44px;
+    padding: 0 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+}
+.contact__submit:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.navbar-list {
+    list-style: none;
+    margin-right: 32px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #fff;
+}
+.navbar-link:hover {
+    color: #e0c320;
+}
+
+.text-title{
+    font-family: "Lora";
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+.body-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+.nav-features:hover{
+    background-color: rgba(255,255,255, 0.8);
+}
+
+#sidebar-info{
+    position: fixed;
+}
+@media (max-width: 767.4px) {
+#sidebar-info{
+    position: static;
+}
+}
+.icon-required {
+    color: red;
+}
