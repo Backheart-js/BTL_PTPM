@@ -5,7 +5,7 @@ if (isset($_SESSION['LoginOK'])) {
     $ps = new Process();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -16,73 +16,59 @@ if (isset($_SESSION['LoginOK'])) {
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../style/formKhaibao.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
-    <div class="">
+    <div class="d-flex" style="overflow-x:hidden;">
         <?php
-            include('./partials-front/header.php');
+            include('./sidebar/index.php');
         ?>
-        <main>
-            <div class="container">
-                <div class="row">
-                    <h4 class="text-center mt-2">QUẢN LÝ NHÂN KHẨU</h4>
-                    <h5 class="text-center mt-2">CÁN BỘ: NGUYỄN VĂN B</h5>
-                    <div class="col-md-12 bg-secondary mt-3 ms-3 me-3">
-                        <div>
-                            <a href="taosohokhau/add-shk.php"><button type="button" class="btn btn-primary mt-2">THÊM HỘ KHẨU</button></a>
-                            <a href="tachkhau/tachkhau.php"><button type="button" class="btn btn-primary mt-2">TÁCH KHẨU</button></a>
-                        </div>
-                        <div class="col-md-4 mt-2">
-                            <form class="flex-row">
-                                <input class="form-control me-2" type="search" id="mashk" placeholder="Tìm kiếm sổ hộ khẩu theo mã sổ hộ khẩu hoặc cccd" aria-label="Search">
-                                <button class="btn btn-success mt-1" id="searchSHK" type="button">Tìm kiếm</button>
-                            </form>
-                        </div>
-                        <hr class="text-white">
-                    </div>
-                    <div class="col-md-12 bg-secondary mb-3 ms-3 me-3 pb-5">
-                        <div class="row" id="allshk">
-                            <?php
-                            $result = $ps->getALLElements('sohokhau');
-                            if($result!=false){
-                            for($i = 0; $i < count($result); $i++){
-                                $row = $result[$i];
-                            ?>
-                            <div class="col-md-2 mt-2">
-                                <div class="card">
-                                    <img src="../images/background/2.png" class="card-img-top img-fluid" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $row['ma_shk']?></h5>
-                                        <a href="shkmanage.php?mashk=<?php echo $row['ma_shk']?>" class="btn btn-primary">Xem thông tin</a>
-                                    </div>
+        <div id="wrapper">
+            <?php
+                include('./partials-front/header.php');
+            ?>
+            <main>
+                <div class="content">
+                    <div class="row">
+                        <h2 class="text-center mt-4 content-title">QUẢN LÝ TRANG</h2>
+                        <div class="container">
+                            <div class="search-wrapper col-md-12 mt-4">
+                                <div class=" col-md-6 mt-4 text-center">
+                                    <form class="flex-row">
+                                        <input class="search-input me-2" type="search" id="mashk" placeholder="Tìm kiếm sổ hộ khẩu theo mã sổ hộ khẩu hoặc cccd" aria-label="Search">
+                                        <button class="search-btn btn mt-1" id="searchSHK" type="button">Tìm kiếm</button>
+                                    </form>
                                 </div>
                             </div>
-                            <?php
-                            }
-                            }
-                            ?>
+                            <div class="result-wrapper col-md-12 mb-3 pb-5 px-4">
+                                <div class="row" id="allshk">
+                                    <?php
+                                    $result = $ps->getALLElements('sohokhau');
+                                    if($result!=false){
+                                    for($i = 0; $i < count($result); $i++){
+                                        $row = $result[$i];
+                                    ?>
+                                    <div class="col-md-3 mt-2">
+                                        <div class="card">
+                                            <img src="../images/background/2.png" class="card-img-top img-fluid" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $row['ma_shk']?></h5>
+                                                <a href="shkmanage.php?mashk=<?php echo $row['ma_shk']?>" class="btn btn-primary">Xem thông tin</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <footer class="body-footer">
-            <div class="container-fluid">
-                <div class="d-flex flex-row justify-content-around" style="height: 30px;">
-                    <div>
-                        <span class="fs-6">&copy; <span class="fs-6 text-center">Bản quyền thuộc công an xã ...</span></span>
-                    </div>
-                    <div>
-                        <span class="fs-6"><span class="fs-6 text-center">Hotline: 0366887398</span></span>
-                    </div>
-                    <div>
-                        <span class="fs-6"><span class="fs-6 text-center">Email: Daodan2612@gmail.com</span></span>
-                    </div>
-                </div>
-            </div>
-        </footer>
+            </main>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -90,10 +76,11 @@ if (isset($_SESSION['LoginOK'])) {
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/Validator.js"></script>
+    <script src="../js/theme-mode.js"></script>
 </body>
 </html>
 <?php
 } else {
-    header("location: ../index.php");
+    header("location: /BTL_PTPM/login/web/index.php");
 }
 ?>

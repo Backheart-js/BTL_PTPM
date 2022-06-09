@@ -10,8 +10,8 @@ if (isset($_SESSION['LoginOK'])) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
 ?>
-            <div class="col-md-2 mt-2">
-                <div class="card">
+            <div class="col-md-3 mt-2">
+                <div class="card item">
                     <img src="../images/background/2.png" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['ma_shk'] ?></h5>

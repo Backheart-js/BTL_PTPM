@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,165 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
-    #sidebar {
-        position: relative;
-        width: 320px;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        background-color: #1b1c1e;
-    }
-    .home-title {
-        color: #ccc;
-        font-size: 32px;
-        text-decoration: none;
-        text-align: center;
-        line-height: 65px;
-    }
-    .home-title:hover {
-        cursor: pointer;
-        color: #ccc;
-    }
-    .search {
-        margin: 8px 8px 16px 16px;
-        display: flex;
-    }
-    .search-input {
-        background-color: transparent;
-        border: #999 solid 1px;
-        border-radius: 4px;
-        padding: 6px 6px;
-        color: #fff;
-        margin-right: 8px;
-    }
-    .search-submit {
-        background-color: #fff;
-    }
-
-    .sidebar-list {
-        list-style: none;
-        padding-left: 16px;
-        padding-top: 16px;
-    }
-    .sidebar-list h5 {
-        font-size: 24px;
-        color: #666;
-        padding-bottom: 12px;
-    }
-    .sidebar-item {
-        padding-left: 16px;
-        margin-bottom: 8px;
-        margin-right: 24px;
-        border-radius: 8px;
-        transition: all 0.2s ease-out;
-    }
-    .sidebar-link {
-        line-height: 44px;
-        width: 100%;
-        font-size: 18px;
-        text-decoration: none;
-        color: #ccc;
-    }
-    .sidebar-link:hover {
-        cursor: pointer;
-        color: #fff;
-    }
-    .sidebar-link:hover .sidebar-item {
-        color: #fff;
-        padding-left: 24px;
-        background-color: #999;
-    }
-
-    .analytic {
-        height: 40px;
-        color: #ccc;
-        margin: 20px 32px 20px 16px; 
-        font-size: 20px;
-        font-weight: 500;
-    }
-    .analytic:hover {
-        cursor: pointer;
-    }
-
-    .setting {
-        height: 40px;
-        color: #ccc;
-        margin: 20px 32px 20px 16px;
-        justify-content: space-between;
-    }
-    .setting:hover {
-        cursor: pointer;
-    }
-    .setting-wrapper {
-        font-size: 20px;
-    }
-    .setting-wrapper span {
-        font-weight: 500;
-    }
-
-    .admin {
-        position: absolute;
-        bottom: 20px;
-        font-size: 24px;
-        color: #fff;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-weight: 600;
-    }
-
-    .setting-options {
-        position: relative;
-        height: 130px;
-    }
-    .setting-options-list {
-        position: absolute;
-        right: 0;
-        left: 0;
-        list-style: none;
-        padding-left: 40px;
-        animation: slideDown ease-in-out .3s;
-    }
-    .setting-options-item {
-        margin-bottom: 12px;
-    }
-
-    .language,
-    .background {
-        justify-content: space-between;
-        margin-right: 30px;
-    }
-
-    .language span,
-    .background span {
-        color: #999;
-        font-size: 16px;
-    }
-
-    .language select {
-        padding: 4px 4px;
-        border-radius: 4px;
-    }
-
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            top: -60px;
-        }
-        50% {
-            opacity: 0.3;
-
-        }
-        100% {
-            opacity: 1;
-            top: 0px;
-        }
-    }
-
-    .d-hidden {
-        display: none;
-    }
-
+    
 </style>
 <body>
     <div id="sidebar" class="position-fixed">
@@ -179,24 +20,25 @@
                 Trang chủ
             </div>
         </a>
-        <div class="search">
-            <input type="text" class="search-input" placeholder="Tìm kiếm ...">
-            <input type="submit" class="search-submit btn" value="Tìm kiếm">
-        </div>
         <hr style="background-color: #ccc; margin: 0;">
 
         <ul class="sidebar-list">
             <h5>
                 MENU
             </h5>
-            <a href="" class="sidebar-link">
+            <a href="/BTL_PTPM/manage/taosohokhau/add-shk.php" class="sidebar-link">
                 <li class="sidebar-item">
-                    Tài khoản
+                    Tạo hộ khẩu mới
                 </li>
             </a>
             <a href="" class="sidebar-link">
                 <li class="sidebar-item">
                     Quản lý nhân khẩu
+                </li>
+            </a>
+            <a href="/BTL_PTPM/manage/tachkhau/tachkhau.php" class="sidebar-link">
+                <li class="sidebar-item">
+                    Tách khẩu
                 </li>
             </a>
             <a href="" class="sidebar-link">
@@ -227,7 +69,7 @@
                 <i class="fa-solid fa-angle-down "></i>
             </div>
         </div>
-        <div class="setting-options d-hidden">
+        <div class="setting-options">
             <ul class="setting-options-list">
                 <li class="setting-options-item">
                     <div class="language d-flex">
@@ -241,7 +83,7 @@
                 <li class="setting-options-item">
                     <div class="background d-flex">
                         <span>Chủ đề</span>
-                        <input type="checkbox" id="">
+                        <div id="toggleBtn"></div>
                     </div>
                 </li>
             </ul>
@@ -254,7 +96,7 @@
         
     </div>
 
-    <script>
+    <!-- <script>
         const setting = document.querySelector('.setting');
         let isOpen = false;
 
@@ -267,6 +109,8 @@
         }
 
         setting.addEventListener('click', handleClick);
-    </script>
+    </script> -->
+
+    <script src="../../js/theme-mode.js"></script>
 </body>
 </html>
