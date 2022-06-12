@@ -8,7 +8,7 @@ if (!isset($_SESSION['LoginOK'])) {
 } else {
     if(isset($_GET['cccd'])){
         $cccd = $_GET['cccd'];
-        $sql = "Select* from tb_chitietshk where cccd = '$cccd'";
+        $sql = "Select* from thanhvien where cccd = '$cccd'";
         $result = mysqli_query($conn, $sql);
         $rowinfoshk = mysqli_fetch_assoc($result);
 ?>
@@ -46,45 +46,6 @@ if (!isset($_SESSION['LoginOK'])) {
                            
                             <div>
                                 <div class="displayblockshk">
-                                    <div class="col-md me-1 mt-3 form-group">
-                                        <label for="exampleInputEmail1" class="form-label fw-bold">Cán bộ đăng ký</label>
-                                        <select class="form-select" aria-label="Default select example" id="canbodangky" name="canbodangky" required>
-                                    
-                                        <?php
-                                        $sqlcanbodangky = "Select * from tb_chucvu where loaichucvu = 2";
-                                        $resultcanbodangky = mysqli_query($conn, $sqlcanbodangky);
-                                        if (mysqli_num_rows($resultcanbodangky)>0) {
-                                        while ($rowcanbodangky = mysqli_fetch_assoc($resultcanbodangky)) {
-                                        ?>
-                                            <?php
-                                        ?>
-                                            <option value="<?php echo $rowcanbodangky['ma_chucvu'] ?>"><?php echo $rowcanbodangky['hoten'] ?></option>
-                                        <?php
-                                        }
-                                        }
-                                        ?>
-                                        </select>
-                                        <span class="form-message"></span>
-                                    </div>
-                                    
-                                <div class="col-md me-1 mt-3 form-group">
-                                    <label for="exampleInputEmail1" class="form-label fw-bold">Trưởng công an huyện</label>
-                                    <select class="form-select" aria-label="Default select example" id="truongcongan" name="truongcongan" required>
-                                    
-                                    <?php
-                                    $sqltruongcongan = "Select * from tb_chucvu where loaichucvu = 1";
-                                    $resulttruongcongan = mysqli_query($conn, $sqltruongcongan);
-                                    if (mysqli_num_rows($resulttruongcongan)>0) {
-                                        while ($rowtruongcongan = mysqli_fetch_assoc($resulttruongcongan)) {
-                                    ?>
-                                            <option value="<?php echo $rowtruongcongan['ma_chucvu'] ?>"><?php echo $rowtruongcongan['hoten'] ?></option>
-                                    <?php
-                                        }
-                                    }
-                                    ?>
-                                    </select>
-                                    <span class="form-message"></span>
-                                </div>
                                 
                                 <div class="col-md me-1 mt-3 form-group">
                                 

@@ -5,8 +5,6 @@ if (isset($_SESSION['LoginOK'])) {
     $ps = new Process();
     if (isset($_GET['mashk'])) {
         $mashk = $_GET['mashk'];
-        $resultca = $ps->getALL("1", "loaichucvu", "tb_chucvu");
-        $resultcb = $ps->getALL("2", "loaichucvu", "tb_chucvu");
         include('../partials-front/header.php');
 ?>
 <head>
@@ -85,34 +83,6 @@ if (isset($_SESSION['LoginOK'])) {
                                 <div class="col-md-6 form-group">
                                     <label for="validationCustom02" class="form-label">NƠI THƯỜNG TRÚ TRƯỚC ĐÂY</label>
                                     <input type="text" class="form-control" id="noithuongtrutruocday" name="noithuongtrutruocday">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="validationCustom02" class="form-label">CÁN BỘ ĐĂNG KÝ</label>
-                                    <select class="form-select" aria-label="Default select example" id="canbodangky" name="canbodangky">
-                                        <?php
-                                        for ($i = 0; $i < count($resultcb); $i++) {
-                                            $rowcb = $resultcb[$i];
-                                        ?>
-                                            <option value="<?php echo $rowcb['ma_chucvu'] ?>"><?php echo $rowcb['hoten'] ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                    </select>
-                                    <span class="form-message"></span>
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="validationCustom02" class="form-label">TRƯỞNG CÔNG AN</label>
-                                    <select class="form-select" aria-label="Default select example" id="truongconganb" name="truongconganb">
-                                        <?php
-                                        for ($i = 0; $i < count($resultca); $i++) {
-                                            $rowca = $resultca[$i];
-                                        ?>
-                                            <option value="<?php echo $rowca['ma_chucvu'] ?>"><?php echo $rowca['hoten'] ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                    </select>
-                                    <span class="form-message"></span>
                                 </div>
                                 <div class="col-12 d-flex justify-content-end mb-3">
                                     <button class="btn btn-primary" type="submit" name="btnSubmitAddMSHK">HOÀN TẤT THÊM</button>

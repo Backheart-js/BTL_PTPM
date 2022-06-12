@@ -5,8 +5,6 @@ if (!isset($_SESSION['LoginOK'])) {
 } else {
     if(isset($_POST['smUpdateshk'])){
         $cccd = $_POST['cccdupdate'];
-        $canbodangky = $_POST['canbodangky'];
-        $truongcongan = $_POST['truongcongan'];
         $hoten = $_POST['hotenupdate'];
         $hotenkhac = $_POST['hotenkhacupdate'];
         $quanhech = $_POST['quanhechupdate'];
@@ -19,10 +17,10 @@ if (!isset($_SESSION['LoginOK'])) {
         $nghenghiepnoilamviec = $_POST['nghenghiepnoilamviecupdate'];
         $noithuongtrutruocday = $_POST['noithuongtrutruocdayupdate'];
     
-        $dbh = new PDO("mysql:host=localhost;dbname=db_qlnk", "root", "");
-        $stmt = $dbh->prepare("UPDATE `tb_chitietshk` SET hoten = ?, hotenkhac = ?, quanhech = ?, 
+        $dbh = new PDO("mysql:host=localhost;dbname=qlnk", "root", "");
+        $stmt = $dbh->prepare("UPDATE `thanhvien` SET hoten = ?, hotenkhac = ?, quanhech = ?, 
         ngaysinh = ?, gioitinh = ?, nguyenquan = ?, dantoc = ?, tongiao = ?, quoctich = ?
-        , nghenghiepnoilamviec = ?, noithuongtrutruocday = ?, canbodangky = ?, truongcongan = ? where `cccd` = ? ");
+        , nghenghiepnoilamviec = ?, noithuongtrutruocday = ? where `cccd` = ? ");
         $stmt->bindParam(1, $hoten);
         $stmt->bindParam(2, $hotenkhac);
         $stmt->bindParam(3, $quanhech);
@@ -34,16 +32,14 @@ if (!isset($_SESSION['LoginOK'])) {
         $stmt->bindParam(9, $quoctich);
         $stmt->bindParam(10, $nghenghiepnoilamviec);
         $stmt->bindParam(11, $noithuongtrutruocday);
-        $stmt->bindParam(12, $canbodangky);
-        $stmt->bindParam(13, $truongcongan);
-        $stmt->bindParam(14, $cccd);
+        $stmt->bindParam(12, $cccd);
         if($stmt->execute()){
-            $sql = "Select* from tb_chitietshk where cccd = '$cccd'";
+            $sql = "Select* from thanhvien where cccd = '$cccd'";
             $result = mysqli_query($conn, $sql);
             $rowinfoshk = mysqli_fetch_assoc($result);
             $ma_shk = $rowinfoshk['ma_shk'];
             if($rowinfoshk['chuho']==1){
-                $sql = "Update tb_sohokhau set hotenchuho = '{$hoten}' where ma_shk = '{$rowinfoshk['ma_shk']}'";
+                $sql = "Update sohokhau set hotenchuho = '{$hoten}' where ma_shk = '{$rowinfoshk['ma_shk']}'";
             }
             mysqli_query($conn, $sql);
             $done = "Sửa thành công!";

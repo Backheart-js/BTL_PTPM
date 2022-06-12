@@ -2,7 +2,7 @@
         $dbHost     = "localhost";
         $dbUsername = "root";
         $dbPassword = "";
-        $dbName     = "db_qlnk";
+        $dbName     = "qlnk";
         require("send_email.php");
         
         // Create database connection
@@ -13,7 +13,7 @@
             die("Connection failed: " .mysqli_connect_error());
         }
         $madon = strtoupper(substr(md5(rand()), 0, 9));
-        $conganxa = "Phú Yên";
+        $conganxa = "Hoàn Kiếm";
         $type = $_POST['type'];
         $fullname=$_POST['fullname'];
         $address=$_POST['address'];

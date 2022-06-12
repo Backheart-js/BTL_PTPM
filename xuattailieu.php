@@ -2,7 +2,7 @@
 require_once 'vendor/autoload.php';
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor('template.docx');
-$hoten = "Đào Duy Đán";
+//$hoten = "Nguyễn Ngọc Bình";
 $mangten = explode(" ", $hoten);
 $ten = $mangten[count($mangten)-1];
 

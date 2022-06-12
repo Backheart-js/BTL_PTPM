@@ -18,7 +18,7 @@ session_start();
 
 <body class="bg-light">
     <?php
-        require "./partials-front/header.php";
+    require "./partials-front/header.php";
     ?>
     <?php
     if (isset($_POST['tracuu'])) {
@@ -28,7 +28,8 @@ session_start();
         $result = $ps->getALL($mashk, "ma_shk", "sohokhau");
         if ($result != false) {
             $row = $result[0];
-            $resultct = $ps->getALL($mashk, "ma_shk", "tb_chitietshk");
+            $resultct = $ps->getALL($mashk, "ma_shk", "thanhvien");
+            $cb_shk = $ps->getCB($mashk, "ma_shk", "sohokhau_taikhoan");
     ?>
             <main style="background-color: #fafafa;">
                 <div class="container mt-3 mb-5">
@@ -73,11 +74,12 @@ session_start();
                                 <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                     <span class="fw-bold fs-6">Ngày cấp: </span><span class="fs-4"><?php echo $ps->getDate($row['ngaycap']) ?></span>
                                 </div>
+                                <?php
+                                $cbdkhk = $ps->getCB($row['ma_shk'], 'ma_shk', 'sohokhau_taikhoan');
+                                $hotencbdkhk = $ps->getCB($cbdkhk['ma_taikhoan'], 'ma_taikhoan', 'taikhoan');
+                                ?>
                                 <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                    <?php
-                                    $cb = $ps->getCB($row['truongcongan'], "ma_chucvu", "chucvu");
-                                    ?>
-                                    <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-5"><?php echo $cb['hoten'] ?></span>
+                                    <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $hotencbdkhk['hoten'] ?></span>
                                 </div>
                             </div>
                             <?php
@@ -121,16 +123,14 @@ session_start();
                                     <span class="fw-bold fs-6">Nghề nghiệp, nơi làm việc: </span><span class="fs-4"><?php echo $ch['nghenghiepnoilamviec'] ?></span>
                                 </div>
                                 <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                    <?php
-                                    $cb = $ps->getCB($ch['canbodangky'], "ma_chucvu", "chucvu");
-                                    ?>
-                                    <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                    <span class="fw-bold fs-6">Nơi thường trú trước đây: </span><span class="fs-4"><?php echo $ch['noithuongtrutruocday'] ?></span>
                                 </div>
+                                <?php
+                                $cbdkch = $ps->getCB($ch['cccd'], 'cccd', 'taikhoan_thanhvien');
+                                $hotencbdkch = $ps->getCB($cbdkch['ma_taikhoan'], 'ma_taikhoan', 'taikhoan');
+                                ?>
                                 <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                    <?php
-                                    $cb = $ps->getCB($ch['truongcongan'], "ma_chucvu", "chucvu");
-                                    ?>
-                                    <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                    <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $hotencbdkch['hoten'] ?></span>
                                 </div>
                             </div>
                             <?php
@@ -159,6 +159,9 @@ session_start();
                                             <span class="fw-bold fs-6">Dân tộc: </span><span class="fs-4"><?php echo $ngdan['dantoc'] ?></span>
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
+                                            <span class="fw-bold fs-6">Tôn giáo: </span><span class="fs-4"><?php echo $ngdan['tongiao'] ?></span>
+                                        </div>
+                                        <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                             <span class="fw-bold fs-6">Quốc tịch: </span><span class="fs-4"><?php echo $ngdan['quoctich'] ?></span>
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
@@ -168,16 +171,17 @@ session_start();
                                             <span class="fw-bold fs-6">Nghề nghiệp, nơi làm việc: </span><span class="fs-4"><?php echo $ngdan['nghenghiepnoilamviec'] ?></span>
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                            <?php
-                                            $cb = $ps->getCB($ngdan['canbodangky'], "ma_chucvu", "chucvu");
-                                            ?>
-                                            <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                            <span class="fw-bold fs-6">Nơi thường trú trước đây: </span><span class="fs-4"><?php echo $ngdan['noithuongtrutruocday'] ?></span>
                                         </div>
                                         <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                            <?php
-                                            $cb = $ps->getCB($ngdan['truongcongan'], "ma_chucvu", "chucvu");
-                                            ?>
-                                            <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                            <span class="fw-bold fs-6">Nơi thường trú trước đây: </span><span class="fs-4"><?php echo $ngdan['noithuongtrutruocday'] ?></span>
+                                        </div>
+                                        <?php
+                                        $cbdktv = $ps->getCB($ngdan['cccd'], 'cccd', 'taikhoan_thanhvien');
+                                        $hotencbdktv = $ps->getCB($cbdktv['ma_taikhoan'], 'ma_taikhoan', 'taikhoan');
+                                        ?>
+                                        <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
+                                            <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $hotencbdktv['hoten'] ?></span>
                                         </div>
                                     </div>
                             <?php
