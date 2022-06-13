@@ -36,11 +36,6 @@
                     Quản lý nhân khẩu
                 </li>
             </a>
-            <a href="/BTL_PTPM/manage/tachkhau/tachkhau.php" class="sidebar-link">
-                <li class="sidebar-item">
-                    Tách khẩu
-                </li>
-            </a>
             <a href="" class="sidebar-link">
                 <li class="sidebar-item">
                     Khai báo tạm vắng/tạm trú

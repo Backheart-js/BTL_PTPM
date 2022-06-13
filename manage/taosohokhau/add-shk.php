@@ -4,8 +4,6 @@ if (isset($_SESSION['LoginOK'])) {
     include('../../model.php');
     include('../partials-front/header.php');
     $ps = new Process();
-    //$resultca = $ps->getALL("1", "loaichucvu", "tb_chucvu");
-    //$resultcb = $ps->getALL("2", "capbac", "taikhoan");
 ?>
 
     <head>
