@@ -91,7 +91,9 @@
 
         <div class="admin">
             <i class="fa-solid fa-circle-user me-1"></i>
-            <span>ADMIN</span>
+            <span>
+                Admin
+            </span>
         </div>
         
     </div>

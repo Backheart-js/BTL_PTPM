@@ -26,7 +26,7 @@ session_start();
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: unset;">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
                             <li class="navbar-list">
-                                <a href="/BTL_PTPM_master_1/index.php" class="navbar-link">Trang chủ</a>
+                                <a href="/BTL_PTPM/index.php" class="navbar-link">Trang chủ</a>
                             </li>
                             <li class="navbar-list">
                                 <a href="" class="navbar-link">Thông tin về chúng tôi</a>

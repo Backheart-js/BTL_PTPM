@@ -10,7 +10,7 @@ if (isset($_SESSION['LoginOK'])) {
 <head>
     <title>Thêm thành viên</title>
 </head>
-        <main>
+        <main style="background-color: #ffffff;">
             <div class="container mb-5">
                 <div class="mt-2 mb-2">
                     <a href="../shkmanage.php?mashk=<?php echo $mashk ?>" class="text-decoration-none d-flex align-items-center"><span class="material-icons">
