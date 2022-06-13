@@ -9,7 +9,7 @@
             $row = mysqli_fetch_assoc($result);
             if(password_verify($password, $row['matkhau'])){
                 if($row['capbac']==1){
-
+                    
                 }else{
                     $_SESSION['LoginOK'] = '2'.$row['ma_taikhoan'];
                     header("location: manage/index.php");

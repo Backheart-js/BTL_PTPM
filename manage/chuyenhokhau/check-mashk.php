@@ -5,7 +5,7 @@ if (isset($_SESSION['LoginOK'])) {
     $ps = new Process();
     if (isset($_POST['mashk'])) {
         $ma_shk = $_POST['mashk'];
-        $sql = "Select* from tb_sohokhau where ma_shk = '$ma_shk'";
+        $sql = "Select* from sohokhau where ma_shk = '$ma_shk'";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result)){
             echo "<small class='check-shk' style='color:green;'>Sổ hộ khẩu chính xác!</small>";

@@ -4,8 +4,8 @@ if (isset($_SESSION['LoginOK'])) {
     include('../../model.php');
     include('../partials-front/header.php');
     $ps = new Process();
-    $resultca = $ps->getALL("1", "loaichucvu", "tb_chucvu");
-    $resultcb = $ps->getALL("2", "loaichucvu", "tb_chucvu");
+    //$resultca = $ps->getALL("1", "loaichucvu", "tb_chucvu");
+    //$resultcb = $ps->getALL("2", "capbac", "taikhoan");
 ?>
 
     <head>
@@ -40,20 +40,6 @@ if (isset($_SESSION['LoginOK'])) {
                         <div class="col-md-6 form-group">
                             <label for="validationCustom02" class="form-label">NGÀY CẤP<span class="icon-required"> (*)</span></label>
                             <input type="date" class="form-control" id="ngaycap" name="ngaycap" required>
-                            <span class="form-message"></span>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="validationCustom02" class="form-label">TRƯỞNG CÔNG AN<span class="icon-required"> (*)</span></label>
-                            <select class="form-select" aria-label="Default select example" name="truongcongana" id="truongcongana">
-                                <?php
-                                for ($i = 0; $i < count($resultca); $i++) {
-                                    $rowca = $resultca[$i];
-                                ?>
-                                    <option value="<?php echo $rowca['ma_chucvu'] ?>"><?php echo $rowca['hoten'] ?></option>
-                                <?php
-                                }
-                                ?>
-                            </select>
                             <span class="form-message"></span>
                         </div>
                         <div class="col-md-6 form-group">
@@ -119,34 +105,6 @@ if (isset($_SESSION['LoginOK'])) {
                         <div class="col-md-6">
                             <label for="validationCustom02" class="form-label">NƠI THƯỜNG TRÚ TRƯỚC ĐÂY</label>
                             <input type="text" class="form-control" id="validationCustom02" name="noithuongtrutruocday">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="validationCustom02" class="form-label">CÁN BỘ ĐĂNG KÝ<span class="icon-required"> (*)</span></label>
-                            <select class="form-select" aria-label="Default select example" id="canbodangky" name="canbodangky">
-                                <?php
-                                for ($i = 0; $i < count($resultcb); $i++) {
-                                    $rowcb = $resultcb[$i];
-                                ?>
-                                    <option value="<?php echo $rowcb['ma_chucvu'] ?>"><?php echo $rowcb['hoten'] ?></option>
-                                <?php
-                                }
-                                ?>
-                            </select>
-                            <span class="form-message"></span>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="validationCustom02" class="form-label">TRƯỞNG CÔNG AN<span class="icon-required"> (*)</span></label>
-                            <select class="form-select" aria-label="Default select example" id="truongconganb" name="truongconganb">
-                                <?php
-                                for ($i = 0; $i < count($resultca); $i++) {
-                                    $rowca = $resultca[$i];
-                                ?>
-                                    <option value="<?php echo $rowca['ma_chucvu'] ?>"><?php echo $rowca['hoten'] ?></option>
-                                <?php
-                                }
-                                ?>
-                            </select>
-                            <span class="form-message"></span>
                         </div>
                         <div class="col-12 d-flex justify-content-end mb-3">
                             <button class="btn btn-primary" type="submit" name="btnSubmitAddSHK">HOÀN TẤT ĐĂNG KÝ</button>

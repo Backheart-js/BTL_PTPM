@@ -3,7 +3,7 @@ require "../../config/config.php";
 if (!isset($_SESSION['LoginOK'])) {
     header('location: ../../index.php');
 } else {
-    // if(isset($_POST['cccd'])){
+    if(isset($_POST['smUpdateshk'])){
         $count = 0;
         $cccd = $_POST['cccdupdate'];
         $ma_shk = $_POST['mashk-check'];
@@ -17,13 +17,12 @@ if (!isset($_SESSION['LoginOK'])) {
         $quoctich = $_POST['quoctich'];
         $nghenghiepnoilamviec = $_POST['nghenghiepnoilamviec'];
         $noithuongtrutruocday = $_POST['noithuongtrutruocday'];
-        $canbodangky = $_POST['canbodangky'];
-        $truongconganb = $_POST['truongconganb'];
-        $dbh = new PDO("mysql:host=localhost;dbname=db_qlnk", "root", "");
+        $canbodangky = $_SESSION['LoginOK'][1];
+        $dbh = new PDO("mysql:host=localhost;dbname=qlnk", "root", "");
         $chuho = false;
         $quanhech = $_POST['quanhech'];
         $tamvang = false;
-        $stmt = $dbh->prepare("UPDATE `tb_chitietshk` SET `ma_shk`= ?,`chuho`= ?,`quanhech`= ?,`hoten`= ?,`hotenkhac`= ?,`ngaysinh`= ?,`gioitinh`= ?,`nguyenquan`= ?,`dantoc`= ?,`tongiao`= ?,`quoctich`= ?,`nghenghiepnoilamviec`= ?,`noithuongtrutruocday`= ?,`canbodangky`= ?,`truongcongan`= ?,`tamvang`= ? WHERE `cccd`= ?");
+        $stmt = $dbh->prepare("UPDATE `thanhvien` SET `ma_shk`= ?,`chuho`= ?,`quanhech`= ?,`hoten`= ?,`hotenkhac`= ?,`ngaysinh`= ?,`gioitinh`= ?,`nguyenquan`= ?,`dantoc`= ?,`tongiao`= ?,`quoctich`= ?,`nghenghiepnoilamviec`= ?,`noithuongtrutruocday`= ? WHERE `cccd`= ?");
         $stmt->bindParam(1, $ma_shk);
         $stmt->bindParam(2, $chuho);
         $stmt->bindParam(3, $quanhech);
@@ -37,26 +36,29 @@ if (!isset($_SESSION['LoginOK'])) {
         $stmt->bindParam(11, $quoctich);
         $stmt->bindParam(12, $nghenghiepnoilamviec);
         $stmt->bindParam(13, $noithuongtrutruocday);
-        $stmt->bindParam(14, $canbodangky);
-        $stmt->bindParam(15, $truongconganb);
-        $stmt->bindParam(16, $tamvang);
-        $stmt->bindParam(17, $cccd);
+        $stmt->bindParam(14, $cccd);
         if($stmt->execute()){
             $count++;
         }
-        $sql = "Select* from tb_chitietshk where cccd = '$cccd'";
+        $stmt = $dbh->prepare("UPDATE `taikhoan_thanhvien` SET `ma_taikhoan` = ? WHERE `cccd` = ?");
+        $stmt->bindParam(1, $canbodangky);
+        $stmt->bindParam(2, $cccd);
+        if($stmt->execute()){
+            $count++;
+        }
+        $sql = "Select* from thanhvien where cccd = '$cccd'";
         $result = mysqli_query($conn, $sql);
         $rowinfoshk = mysqli_fetch_assoc($result);
         $ma_shk = $rowinfoshk['ma_shk'];
-        if($count==1){
+        if($count==2){
             $done = "Chuyển khẩu thành công!";
             header("location: ../shkmanage.php?mashk=$ma_shk&done=$done");
         }else{
             $done = "Chuyển khẩu không thành công!";
             header("location: ../shkmanage.php?mashk=$ma_shk&done=$done");
         }
-    // }else{
-    //     //header("location: ../index.php");
-    // }
+    }else{
+        header("location: ../index.php");
+    }
 }
 ?>

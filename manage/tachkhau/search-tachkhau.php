@@ -5,7 +5,7 @@ if (isset($_SESSION['LoginOK'])) {
     $ps = new Process();
     if (isset($_POST['mashk'])) {
         $ma_shk = $_POST['mashk'];
-        $sql = "Select* from tb_chitietshk where ma_shk = '{$ma_shk}'";
+        $sql = "Select* from thanhvien where ma_shk = '{$ma_shk}'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 1) {
             ?>

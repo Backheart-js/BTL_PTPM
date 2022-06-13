@@ -8,9 +8,9 @@ if (!isset($_SESSION['LoginOK'])) {
     if(isset($_POST['cccd'])){
         $cccd = $_POST['cccd'];
         if($cccd!='x'){
-        $result = $ps->getALL($cccd, "cccd", "tb_chitietshk");
+        $result = $ps->getALL($cccd, "cccd", "thanhvien");
         $row = $result[0];
-        $resultall = $ps->getALL($row['ma_shk'], "ma_shk", "tb_chitietshk");
+        $resultall = $ps->getALL($row['ma_shk'], "ma_shk", "thanhvien");
         for($i = 0; $i < count($resultall); $i++){
             $rowi = $resultall[$i];
             if($rowi['cccd']!=$cccd){

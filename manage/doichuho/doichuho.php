@@ -8,7 +8,7 @@ if (!isset($_SESSION['LoginOK'])) {
 } else {
     if (isset($_GET['mashk'])) {
         $ma_shk = $_GET['mashk'];
-        $result = $ps->getALL($ma_shk, "ma_shk", "tb_chitietshk");
+        $result = $ps->getALL($ma_shk, "ma_shk", "thanhvien");
         for ($i = 0; $i < count($result); $i++) {
             $row = $result[$i];
             if ($row['chuho'] == 1) {

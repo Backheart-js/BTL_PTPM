@@ -6,10 +6,10 @@ if (isset($_SESSION['LoginOK'])) {
     if (isset($_GET['mashk'])) {
         $mashk = $_GET['mashk'];
         $ps = new Process();
-        $result = $ps->getALL($mashk, "ma_shk", "tb_sohokhau");
+        $result = $ps->getALL($mashk, "ma_shk", "sohokhau");
         if ($result != false) {
             $row = $result[0];
-            $resultct = $ps->getALL($mashk, "ma_shk", "tb_thanhvienshk");
+            $resultct = $ps->getALL($mashk, "ma_shk", "thanhvien");
 ?>
             <!DOCTYPE html>
             <html lang="en">
@@ -109,11 +109,12 @@ if (isset($_SESSION['LoginOK'])) {
                                     <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
                                         <span class="fw-bold fs-6">Ngày cấp: </span><span class="fs-4"><?php echo $ps->getDate($row['ngaycap']) ?></span>
                                     </div>
+                                    <?php
+                                    $cbdkhk = $ps->getCB($row['ma_shk'], 'ma_shk', 'sohokhau_taikhoan');
+                                    $hotencbdkhk = $ps->getCB($cbdkhk['ma_taikhoan'], 'ma_taikhoan', 'taikhoan');
+                                    ?>
                                     <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                        <?php
-                                        $cb = $ps->getCB($row['truongcongan'], "ma_chucvu", "tb_chucvu");
-                                        ?>
-                                        <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-5"><?php echo $cb['hoten'] ?></span>
+                                        <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $hotencbdkhk['hoten'] ?></span>
                                     </div>
                                 </div>
                                 <?php
@@ -157,16 +158,14 @@ if (isset($_SESSION['LoginOK'])) {
                                         <span class="fw-bold fs-6">Nghề nghiệp, nơi làm việc: </span><span class="fs-4"><?php echo $ch['nghenghiepnoilamviec'] ?></span>
                                     </div>
                                     <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                        <?php
-                                        $cb = $ps->getCB($ch['canbodangky'], "ma_chucvu", "tb_chucvu");
-                                        ?>
-                                        <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                        <span class="fw-bold fs-6">Nơi thường trú trước đây: </span><span class="fs-4"><?php echo $ch['noithuongtrutruocday'] ?></span>
                                     </div>
+                                    <?php
+                                    $cbdkch = $ps->getCB($ch['cccd'], 'cccd', 'taikhoan_thanhvien');
+                                    $hotencbdkch = $ps->getCB($cbdkch['ma_taikhoan'], 'ma_taikhoan', 'taikhoan');
+                                    ?>
                                     <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                        <?php
-                                        $cb = $ps->getCB($ch['truongcongan'], "ma_chucvu", "tb_chucvu");
-                                        ?>
-                                        <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                        <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $hotencbdkch['hoten'] ?></span>
                                     </div>
                                     <div class="d-flex mt-3 mb-3 justify-content-center">
                                         <button type="button" class="btn btn-primary me-2" data-toggle="modal" data-target="#exampleModal">
@@ -212,16 +211,14 @@ if (isset($_SESSION['LoginOK'])) {
                                                 <span class="fw-bold fs-6">Nghề nghiệp, nơi làm việc: </span><span class="fs-4"><?php echo $ngdan['nghenghiepnoilamviec'] ?></span>
                                             </div>
                                             <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                                <?php
-                                                $cb = $ps->getCB($ngdan['canbodangky'], "ma_chucvu", "tb_chucvu");
-                                                ?>
-                                                <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                                <span class="fw-bold fs-6">Nơi thường trú trước đây: </span><span class="fs-4"><?php echo $ngdan['noithuongtrutruocday'] ?></span>
                                             </div>
+                                            <?php
+                                            $cbdktv = $ps->getCB($ngdan['cccd'], 'cccd', 'taikhoan_thanhvien');
+                                            $hotencbdktv = $ps->getCB($cbdktv['ma_taikhoan'], 'ma_taikhoan', 'taikhoan');
+                                            ?>
                                             <div class="border-bottom d-flex justify-content-between mt-2 pb-2">
-                                                <?php
-                                                $cb = $ps->getCB($ngdan['truongcongan'], "ma_chucvu", "tb_chucvu");
-                                                ?>
-                                                <span class="fw-bold fs-6"><?php echo $cb['chucvu'] ?>: </span><span class="fs-4"><?php echo $cb['hoten'] ?></span>
+                                                <span class="fw-bold fs-6">Cán bộ đăng ký: </span><span class="fs-4"><?php echo $hotencbdktv['hoten'] ?></span>
                                             </div>
                                             <div class="d-flex mt-3 mb-3 justify-content-center">
                                                 <button type="button" class="btn btn-primary me-2" data-toggle="modal" data-target="#exampleModal">
@@ -248,6 +245,7 @@ if (isset($_SESSION['LoginOK'])) {
                         </div>
                     </div>
                 </main>
+
     <?php
             require "./partials-front/footer.php";
         } else {

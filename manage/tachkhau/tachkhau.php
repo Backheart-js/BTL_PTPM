@@ -4,8 +4,6 @@ if (isset($_SESSION['LoginOK'])) {
     include('../../model.php');
     include('../partials-front/header.php');
     $ps = new Process();
-    $resultca = $ps->getALL("1", "loaichucvu", "tb_chucvu");
-    $resultcb = $ps->getALL("2", "loaichucvu", "tb_chucvu");
 ?>
 <head>
     <title>Tách khẩu</title>
@@ -52,9 +50,12 @@ if (isset($_SESSION['LoginOK'])) {
                 </div>
             </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script src="../../js/Validator.js"></script>
     <script src="../../js/script.js"></script>
 <?php
-    include("../partials-front/footer.php");
+    //include("../partials-front/footer.php");
 }
 ?>

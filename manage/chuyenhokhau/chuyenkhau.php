@@ -9,12 +9,10 @@ if (!isset($_SESSION['LoginOK'])) {
 } else {
     if (isset($_GET['cccd'])) {
         $cccd = $_GET['cccd'];
-        $sql = "Select* from tb_chitietshk where cccd = '$cccd'";
+        $sql = "Select* from thanhvien where cccd = '$cccd'";
         $result = mysqli_query($conn, $sql);
         $rowinfoshk = mysqli_fetch_assoc($result);
-        $rownc = $ps->getCB($cccd, "cccd", "tb_chitietshk");
-        $resultca = $ps->getALL("1", "loaichucvu", "tb_chucvu");
-        $resultcb = $ps->getALL("2", "loaichucvu", "tb_chucvu");
+        $rownc = $ps->getCB($cccd, "cccd", "thanhvien");
 ?>
 
         <head>
@@ -155,46 +153,6 @@ if (!isset($_SESSION['LoginOK'])) {
                                     <div class="col-md-6 form-group">
                                         <label for="validationCustom02" class="form-label">NƠI THƯỜNG TRÚ TRƯỚC ĐÂY</label>
                                         <input type="text" class="form-control" id="validationCustom02" value="<?php echo $rownc['noithuongtrutruocday'] ?>" name="noithuongtrutruocday">
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="validationCustom02" class="form-label">CÁN BỘ ĐĂNG KÝ</label>
-                                        <select class="form-select" aria-label="Default select example" id="canbodangky" name="canbodangky">
-                                            <?php
-                                            for ($i = 0; $i < count($resultcb); $i++) {
-                                                $rowcb = $resultcb[$i];
-                                                if ($rowcb['ma_chucvu'] == $rownc['canbodangky']) {
-                                            ?>
-                                                    <option value="<?php echo $rowcb['ma_chucvu'] ?>" selected><?php echo $rowcb['hoten'] ?></option>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <option value="<?php echo $rowcb['ma_chucvu'] ?>"><?php echo $rowcb['hoten'] ?></option>
-                                            <?php
-                                                }
-                                            }
-                                            ?>
-                                        </select>
-                                        <span class="form-message"></span>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="validationCustom02" class="form-label">TRƯỞNG CÔNG AN</label>
-                                        <select class="form-select" aria-label="Default select example" id="truongconganb" name="truongconganb">
-                                            <?php
-                                            for ($i = 0; $i < count($resultca); $i++) {
-                                                $rowca = $resultca[$i];
-                                                if ($rowca['ma_chucvu'] == $rownc['truongcongan']) {
-                                            ?>
-                                                    <option value="<?php echo $rowca['ma_chucvu'] ?>" selected><?php echo $rowca['hoten'] ?></option>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <option value="<?php echo $rowca['ma_chucvu'] ?>"><?php echo $rowca['hoten'] ?></option>
-                                            <?php
-                                                }
-                                            }
-                                            ?>
-                                        </select>
-                                        <span class="form-message"></span>
                                     </div>
                                 </div>
                                 <div class="mt-3 d-flex justify-content-center">
